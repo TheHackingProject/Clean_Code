@@ -22,18 +22,18 @@ Ce qui veut dire qu'il va falloir que tu comprennes ce code cryptique par toi-m�
 Félicitations on se disait ?..
 
 ## 2. Le projet
-Ta mission si tu toutefois tu l'acceptes, est de tester ce code.
-tu trouveras un vieux fichier de specs dans ce [repo](un_repo_github_de_THP).
-### 2.1. Vos contraintes
+Ta mission si toutefois tu l'acceptes, est de tester ce code.
+Tu trouveras un vieux fichier de specs dans ce [repo](un_repo_github_de_THP).
+### 2.1. Tes contraintes
 
-Dans ce repo tu y trouves des tests en pending. Apparemment la description des tests est plutôt précise et bien foutue. tu peux faire confiance à cela.
+Dans ce repo tu y trouves des tests en pending. Apparemment la description des tests est plutôt précise et bien foutue. Tu peux faire confiance à cela.
 En revanche : ton lead tech t'interdit formellement de toucher au code pour ton premier jour. Tu ne peux modifier QUE le contenu du dossier `spec/`.
 Bien sûr : tu as le droit de toucher au Gemfile. Mais pas de charger un nouveau framework de test. Chez Bürgerroy, on est pas des caramels mous : on veut du RSpec natif.
 Mais tu peux très bien te dl de superbes gem supplémentaires pour agrémenter tes outils de débugs, ou les couleurs de sortie dans ton terminal si ça te chante.
 
 
 ### 2.2. L'art et la manière
-En gros ce que vos lead tech attend de tu c'est de passer de ça :
+En gros ce que ton lead tech attend de toi c'est de passer de ça :
 
 ```ruby
 # # Nom de la classe testée
@@ -70,5 +70,5 @@ Ding dong... justement, en parlant d'eux, t'as une nouvelle notif sur ton slack.
 
 Heureusement en tant que mouss/flibustier ou quelque marin que ce soit : la pression tu ne la subit pas, tu la bois pendant les apéros THP.
 Pas de panique donc, ce cours t'as suffisemment préparé.
-Tu vas t'en sortir haut la main et avec le temps qu'il te reste tu organise l'apéro de mercredi easy peasy.
+Tu vas t'en sortir haut la main et avec le temps qu'il te reste tu organises l'apéro de mercredi easy peasy.
 
