@@ -26,9 +26,11 @@ Ta mission si tu toutefois tu l'acceptes, est de tester ce code.
 tu trouveras un vieux fichier de specs dans ce [repo](un_repo_github_de_THP).
 ### 2.1. Vos contraintes
 
-tu y trouves des tests en pending. Apparemment la description des tests est plutôt précise et bien foutue. tu peux faire confiance à cela.
-En revanche : ton lead tech tu interdit formellement de toucher au code pour ton premier jour. tu ne peux modifier QUE le contenu du dossier `spec/`.
-Bien sûr : tu as le droit de toucher au Gemfile. Mais pas de charger un nouveau framework de test. (Si )
+Dans ce repo tu y trouves des tests en pending. Apparemment la description des tests est plutôt précise et bien foutue. tu peux faire confiance à cela.
+En revanche : ton lead tech t'interdit formellement de toucher au code pour ton premier jour. Tu ne peux modifier QUE le contenu du dossier `spec/`.
+Bien sûr : tu as le droit de toucher au Gemfile. Mais pas de charger un nouveau framework de test. Chez Bürgerroy, on est pas des caramels mous : on veut du RSpec natif.
+Mais tu peux très bien te dl de superbes gem supplémentaires pour agrémenter tes outils de débugs, ou les couleurs de sortie dans ton terminal si ça te chante.
+
 
 ### 2.2. L'art et la manière
 En gros ce que vos lead tech attend de tu c'est de passer de ça :
@@ -49,6 +51,15 @@ describe TestedClass do
  end
 end
 ```
+
+### 2.3. Mais ça marche sur ma machine
+Oui tous les dèvs de la boîte vous le diront : ça marche très bien chez eux...
+Peut-être que cela aussi fonctionnera chez toi... mais en tout cas, cela ne fonctionne jamais chez les clients.
+
+C'est sûrement que les clients n'ont pas RSpec d'installé chez eux...
+Il faut donc t'occuper également du Gemfile et faire en sorte que les tests tournent avec la commande `bundle exec rspec`.
+
+Tips: oui... c'est pour ça que t'as le droit de toucher au Gemfile...
 
 ## 3. Rendu attendu
 On attend donc de toi le même repo github que ce qui t'a été donné, mais avec des tests remaniés.
