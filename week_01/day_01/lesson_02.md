@@ -1,5 +1,9 @@
-# Titre de la deuxième ressource
-Description de la ressource au format texte et en 1 paragraphe max (pas plus)
+# Dissection d'un extraterrestre
+Dans cette ressource on va partir d'un fichier RSpec très simple et on va le disséquer.
+En entrée, l'idée c'est qu'on soit d'accord sur le vocabulaire et les possibilités offertes par RSpec.
+
+Pas le temps de digérer qu'en guise de plat, tu vas manger du matcher à tire la rigo. Et attention, c'est sans sauce. Ce sera un peu sec, mais franchement c'est comme apprendre une langue étrangère. A un moment donné faut accepter de se farcir du vocabulaire sinon comment commander ta bière dans un bar de [Bischkek](https://g.page/metropubkg?share)(bar que, par ailleur, je te recommande) ?
+
 
 ## 1. Introduction
 Une introduction sur la ressource.

@@ -1,1 +1,3 @@
-Description de la cinquième journée au format texte et en un paragraphe.
+Le mockingjay d'Hunger Games ça vous rappel un truc ?
+Ben là pareil, les hardcore testers pourront affronter les mocks, double et spies avec ferveurs...
+Attention, ça se pratiquent avec coquille, plastron et anti-venin.

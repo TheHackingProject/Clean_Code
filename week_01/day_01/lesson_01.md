@@ -1,6 +1,10 @@
-# Titre de la première ressource
-Description de la ressource au format texte et en 1 paragraphe max (pas plus)
+# Installation et philosophie
+Bon on va refaire un point rapide histoire qu'on soit tous au diapason.
+RSpec est déjà certainement installé sur ta machine, mais on va faire comme si ce n'était pas le cas.
+On va aborder les différentes gem qui existes, et on verra quand et pourquoi les mettres dans ton projet.
 
+On abordera tant qu'à faire la philosophie d'RSpec, sa documentation, et les vrais notions qui s'y cachent.
+T'inquiète, on est pas là pour se faire du mal tout de suite, on sera bref, mais lire ces paragraphes sera riche en enseignement pour toi.
 ## 1. Introduction
 Une introduction sur la ressource.
 

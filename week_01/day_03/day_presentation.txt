@@ -1,1 +1,2 @@
-Description de la troisième journée au format texte et en un paragraphe.
+Aujourd'hui vous allez reprendre l'exercice d'hier avec RSpec.
+On en profitera pour aborder certaines notions plus complexe de testing.

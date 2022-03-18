@@ -1,1 +1,7 @@
-Description de la deuxième journée au format texte et en un paragraphe.
+Ce matin vous avez survécue à votre première review de tests.
+
+Alors ? ça fait pas du bien de se sentir powerfull en RSpec ?
+
+Bon hier les tests étaient guidés, vous saviez quoi tester.
+Aujourd'hui, on va apprendre comment on fait pour savoir QUOI tester et pourquoi.
+Je vous le dis honnêtement: après cette journée, si vous avez pigé le truc, les tests c'est juste une formalité par la suite.

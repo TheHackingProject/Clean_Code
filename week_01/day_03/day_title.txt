@@ -1,1 +1,1 @@
-Titre de la troisième journée
+RSpec, les notions vénères
