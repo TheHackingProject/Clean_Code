@@ -23,7 +23,7 @@ Félicitations on se disait ?..
 
 ## 2. Le projet
 Ta mission si toutefois tu l'acceptes, est de tester ce code.
-Tu trouveras un vieux fichier de specs dans ce [repo](un_repo_github_de_THP).
+Tu trouveras un vieux fichier de specs dans ce [repo](https://github.com/TheHackingProject/Legacy_Code_From_Hell).
 ### 2.1. Tes contraintes
 
 Dans ce repo tu y trouves des tests en pending. Apparemment la description des tests est plutôt précise et bien foutue. Tu peux faire confiance à cela.
@@ -62,7 +62,7 @@ Il faut donc t'occuper également du Gemfile et faire en sorte que les tests tou
 Tips: oui... c'est pour ça que t'as le droit de toucher au Gemfile...
 
 ## 3. Rendu attendu
-On attend donc de toi le même repo github que ce qui t'a été donné, mais avec des tests remaniés.
+On attend donc de toi un repo github identique à ce qui t'a été donné, mais avec des tests remaniés.
 
 Attention, si tu t'amuses à changer le code legacy pour faciliter tes tests... saches que tu risques gros si ton lead tech ou ton CTO s'en aperçoivent...
 
