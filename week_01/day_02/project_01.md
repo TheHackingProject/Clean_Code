@@ -10,7 +10,7 @@ Eh ben on va le tester.
 Ce projet est vraiment pas compliqué.
 Il faut décrire qu'est ce qu'il faudrait tester si on voulait passer le code de ce TicTacToe sous RSpec.
 
-Clone ce repos et observe comment il fonctionne.
+Clone ce [repo](https://github.com/TheHackingProject/TicTacToe) et observe comment il fonctionne.
 
 Ne sois pas perturbé. Ce n'est pas le meilleur code du monde pour faire un TicTacToe. Pour être franc c'est celui que j'avais fait lors de la session 5 de THP il y a quelques années maintenant.
 
