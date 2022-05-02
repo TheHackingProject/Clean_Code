@@ -1,27 +1,190 @@
-# Installation et philosophie
-Bon on va refaire un point rapide histoire qu'on soit tous au diapason.
-RSpec est déjà certainement installé sur ta machine, mais on va faire comme si ce n'était pas le cas.
-On va aborder les différentes gem qui existes, et on verra quand et pourquoi les mettres dans ton projet.
+# RSpec : rappels et installation.
+Installer RSpec est aussi simple qu'un `gem install`. Mais il y a plusieurs gems formant le framework. Comprendre ce qu'il y a dedans, c'est comprendre quoi utiliser pour tous vos futurs projets.
 
-On abordera tant qu'à faire la philosophie d'RSpec, sa documentation, et les vrais notions qui s'y cachent.
-T'inquiète, on est pas là pour se faire du mal tout de suite, on sera bref, mais lire ces paragraphes sera riche en enseignement pour toi.
 ## 1. Introduction
-Une introduction sur la ressource.
+Bon on va refaire un point rapide histoire qu'on soit tous au diapason.
+RSpec est déjà certainement installé sur ta machine, mais on va faire comme si ce n'était pas le cas. L'object
+On va aborder rapidement les différentes gem qui existent, et on verra quand et pourquoi les mettres dans ton projet.
+
+Enfin on apprendra à lancer RSpec correctement. Oui ya deux ou trois trucs que tu dois savoir pour briller en société. Hein ? Non pas le roquefort...
 
 ## 2.Historique et contexte
-Cette partie peut être plus ou moins longue. Elle explique l'histoire ou le contexte sur la notion que l'on veut enseigner.
+<!-- Cette partie peut être plus ou moins longue. Elle explique l'histoire ou le contexte sur la notion que l'on veut enseigner. -->
+Je vais pas te saouler avec l'histoire d'RSpec... Mais si ça t'intéresse et que t'as du temps libre tu peux aller voir directement sur leur site, où il y a une [page d'info](https://rspec.info/about/) exactement sur ce sujet.
 
 ## 3. La ressource
-Cette partie est le nerf de la ressource, elle expliquera les notions de cette ressource.
+<!-- Cette partie est le nerf de la ressource, elle expliquera les notions de cette ressource.-->
 
-### 3.1. Première sous partie
-blabla
+### 3.1. Installer RSpec
+#### 3.1.1 En global
+##### 3.1.1.1 Le contenu d'RSpec
+<!-- blabla -->
+En fait RSpec est composé de trois gems indépendantes. Et ouais :
+- ***rspec-core :*** c'est le moteur d'rspec. En gros c'est cette gem qui répond à la commande `rspec` dans ton terminal.
+- ***rspec-expectations :*** qui te fournit toute la syntaxe qui te rebute tant jusqu'à maintenant. Tu sais les fameux :
+```ruby
+describe 'une méthode' do
+  it 'fait quelque chose ' do
+    expect(some_code).to match(something)
+  end
+end
+```
+ben voilà c'est cette gem.
+- ***rspec-mocks :*** cette gem est responsable de ma perte de cheveux. On ne l'abordera qu'à la toute fin de ce parcours. Mais pour faire simple cela permet de tester du code qui n'existe pas encore. To mock signifie "imiter" en anglais. Donc de manière très basique cela permet de créer des objets qui vont pouvoir faire semblant de ce comporter comme tu en aurais besoin. Sauf qu'il n'y a pas de code derrière.... Bref. Pour le moment c'est obscure. Fais pas comme moi : ne commence pas par t'attarder sur ce point.
 
-### 3.2. Deuxième sous partie
-blabla
+Avec tout ce merdier vient également une 4ème gem :
+- ***rspec-support :*** celle là regroupe tout un tas de choses dont les 3 autres peuvent avoir besoin. Mais cette gem n'est pas faite pour fonctionner directement toute seule. Tu peux donc l'oublier pour le moment.
+
+##### 3.1.1.2 Et rails ?
+Bien vu ! Il existe une gem dédiée à rails : ***rspec-rails***. Elle t'offre tout un tas de helpers super utile dans rails. On abordera ça spécifiquement un peu plus tard dans la semaine.
+Certaines personnes te diront que cela ne fait pas partie du package d'rspec... J'avoue je te laisse débatre. Dans tous les cas : maintenant tu sais.
+
+##### 3.1.1.3 Installation
+Bien sûr tu peux tout à fait installer toutes ces gems séparément. Tu peux donc très bien taper dans ton terminal :
+```shell
+gem install rspec-core
+```
+cela va fonctionner et te donner accès à la commande rspec. Cela est très pratique à savoir si jamais tu as besoin uniquement de `rspec-expectation` dans un projet qui utilise mini-test par exemple.
+
+Mais le mieux, pour nous et pour apprendre, reste encore de tout installer d'un seul coup avec cette commande que je te demande de faire :
+```shel
+gem install rspec
+```
+
+normalement cela te donne accès aux 3 gems utiles ainsi qu'à celle que je t'ai demandé d'oublier.
+
+Pour être sûr que tout est rentré dans l'ordre tu peux exécuter la commande :
+```shell
+rspec --version
+```
+ou
+```shell
+rspec -v
+```
+qui doit normalement te renvoyer les lignes suivantes :
+```shell
+RSpec 3.11
+  - rspec-core 3.11.0
+  - rspec-expectations 3.11.0
+  - rspec-mocks 3.11.0
+  - rspec-rails 5.0.2
+  - rspec-support 3.11.0
+```
+
+Ainsi tu as tout, et à jour ! :tada: :muscle: !
+
+#### 3.1.2 En local dans un projet
+Bien sûr il existe des projets ou pour une raison ou une autre tu ne voudras pas la version installée sur ta machine.
+Tu pourras bien évidemment te servir du fameux Gemfile pour spécifier la version que tu veux dans le projet.
+
+C'est pas compliqué, mais cela va modifier la manière de lancer RSpec. On voit ça dès maintenant.
+
+
+### 3.2. Lancer RSpec (non pas si loin)
+<!-- blabla -->
+#### 3.2.1 Celui que tu viens d'installer
+Lancer RSpec quand tu es sur ta propre machine et que tu t'es pas pris la tête avec un Gemfile, tu peux simplement exécuter la commande :
+```shell
+rspec
+```
+dans le dossier où tu veux qu'RSpec se lance.
+RSpec va alors aller dans le dossier `spec/` et lancer tous les tests trouvés dans les fichiers terminant par `*_spec.rb`.
+
+#### 3.2.2 Une autre version.
+C'est un peu différent lorsque tu veux lancer une version bien spécifique uniquement dans un projet en cours.
+Pour bien comprendre, il nous faut un peu d'imagination :
+Tu viens de récupérer le repository de quelqu'un. En bon corsaire/pirate/flibustier(e)/aspirant(e)/moussaillon(ne) que tu es (biffer les mentions inutiles), ton réflexe est donc de faire un petit `bundle install` des familles histoire d'instaler localement toutes les gems.
+Cette personne, dans son Gemfile avait précisé : `gem 'rspec', '~> 3.8'`.
+Non pas que ça te dérange mais si tu exécutes la commande `rspec -v` tu verras que c'est bien la version `3.8` du projet qui est lancée... pas la `3.11` de ta machine.
+
+Mais tu vas également surement te taper un petit warning. Et puis... comment en être véritablement sûr dans le feu de l'action ?
+
+Et bien c'est simple :
+```shell
+bundle exec rspec
+```
+est la commande qu'il te faut.
+
+Alors on va pas se mentir, ceci n'est pas un cours sur Bundler, et il est probable que si notre très cher Zaratan (:heart: sur toi) lit ces lignes, ma tête soit mise à prix.
+
+Mais je vais te faire un aveux. C'est tout de même ce que conseille deux des contributeurs principaux d'RSpec. J'ai décidé de te transmettre ce savoir tel quel.
+
+Tu noteras que dans le reste de ce parcours je vais utiliser la commande `rspec` et non `bundle exec rspec` par simplicité.
+
+
+#### 3.2.3 `rspec` c'est bien... mais `rspec` avec option c'est mieux.
+lance un petit
+```shell
+rspec --help
+```
+pour voir.
+
+Tu devrais voir pléthore d'options différentes.
+On ne va pas toutes les parcourirs, car cela pourrait faire l'objet de ressources entières.
+Mais juste je vais te présenter quelques petits tips qui te simplifieront la vie.
+
+##### 3.2.3.1 rspec [files or directories]
+Quand on écrit des tests, même quand on est maso et qu'on aime ça, on a pas envie de se farcir de lancé l'intégralité de la suite de tests. Surtout que dans les projets classiques en entreprise, on parle de plusieurs minutes... voir heures pour certains projets.
+Pour info l'application Airfrance à une suite de tests qui mets plus de 45 minutes à tourner (non c'est pas une blague).
+
+Donc évidemment quand t'as corrigé une typo dans un fichier et que tu veux juste t'assurer que t'as rien pété, tu vas simplement exécuté :
+```shell
+rspec spec/chemin/vers/ton/fichier_spec.rb
+```
+
+Et cela ne lancera rspec que sur le fichier en question.
+
+On peut même aller encore plus loin en faisant :
+```shell
+rspec spec/chemin/vers/ton/fichier_spec.rb:15
+```
+
+Ceci ne lancera que le premier groupe de tests qui se trouvera à partir de la ligne 15 du fichier. Une fois ce groupe de tests passé, RSpec n'ira pas plus loin dans le fichier.
+
+##### 3.2.3.2 rspec --only-failures
+Ahhh... alors celui là c'est mon favori. Il m'a fait briller de nombreuses fois en startup.
+En fait c'est tout con.
+Tu lance rspec une première fois... certains tests sont au vert. D'autre au rouge.
+Flemme de lancer la commande :
+```shell
+rspec fichier1_spec.rb:4 fichier2_spec.rb:12 ... fichierN_spec.rb:42
+```
+?
+
+Pas de panique :
+```shell
+rspec --only-failures
+```
+ne lancera que les tests qui ont précédemment échoués. Une fois corrigés le test sortira en vert, et sera retiré de cette liste.
+Pour que cela fonctionne il faut juste que RSpec enregistre cette liste quelque part.
+Je t'invite donc à configurer cela dans un fichier spec. Rajoute les lignes suivante dans un fichier et hop magic :
+```ruby
+RSpec.configure do |config|
+  config.example_status_persistence_file_path = 'spec/example.txt'
+end
+```
+Cela créera un fichier `example.txt` dans le dossier `spec/`. Mais tu peux aussi le nommer comme tu veux.
+
+Tu as tout de même encore trop de tests qui sont au rouge ?
+Pas de panique, tu as dans ce cas :
+```shell
+rspec --next-failure
+```
+qui ne lancera qu'un seul test précédemment échoué à la fois (toujours dans le même ordre). Donc tu corriges ton code pour faire passer ton test au vert et HOP rpsec ira directement au test suivant jusqu'à ce qu'il n'y en ai plus.
+
 
 ## 4. Points importants à retenir
-La ressource en quelques points importants.
+<!-- La ressource en quelques points importants. -->
+Bon mine de rien cela fait déjà beaucoup d'entrée de jeux. J'ai bien conscience de cela. Mais ne t'inquiète pas, l'essentiel à retenir tiens en quelques lignes :
+installer la dernière version d'RSpec c'est con comme `gem install rspec`.
+Pour l'utiliser dans un projet récupéré chez quelqu'un d'autre c'est mieux de faire un `bundle exec rspec`.
+On peut exécuter RSpec uniquement sur certains fichiers avec `rspec spec/chemin/vers/ton/fichier_spec.rb`. En ajoutant `:15` où 15 est le numéro de la ligne que tu veux, tu peux même carrément ne lancer qu'un groupe de tests à la fois.
+Tu peux aussi ne lancer que les tests qui ont précédemment foirés via `rspec --only-failures` ou `rspec --next-failure`, moyennant un peu de config.
 
 ## 5. Pour aller plus loin
-Quelques éléments en ligne pour aller plus loin
+<!-- Quelques éléments en ligne pour aller plus loin -->
+Si t'as du temps, je t'invite à essayer de découvrir les autres fonctionnalités cachés en lisant attentivement le résultat de la commande `rspec --help`.
+Tu ne comprendras ptet pas tout, mais il y a certaines choses qui pourraient te plaire.
+
+Egalement si t'as le feu en toi, tu peux regarder la [gem guard](https://github.com/guard/guard-rspec) qui relancera automatiquement les tests que tu viens de modifier.
+Tu peux aussi te renseigner un peu plus sur la commande `rspec --tag TAG[:value]` indiquée dans l'aide. Cela pourra te permettre plus tard dans la semaine de ne lancer que les tests controllers par exemple avec un `rspec -t type:request` qui va bien :wink:
