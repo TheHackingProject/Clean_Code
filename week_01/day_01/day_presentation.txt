@@ -1,5 +1,5 @@
 On va pas se mentir... Si t'as fait Fullstack, ou Développeur React, RSpec c'était pas ton pote.
-On a bien essayer de t'apprendre à en faire... mais clairement il te manquait un truc, une étincelle... un je ne sais quoi qui fait que t'as envie de faire des tests.
+On a bien essayé de t'apprendre à en faire... mais clairement il te manquait un truc, une étincelle... un je ne sais quoi qui fait que t'as envie de faire des tests.
 
 Et bien cette première journée est là directement pour ça. On rentre cash dans le vif du sujet.
 
