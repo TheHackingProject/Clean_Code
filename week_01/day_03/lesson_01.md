@@ -7,7 +7,7 @@ En RSpec, comme en Ruby, on peut créer des variables. On va voir pourquoi RSpec
 ## 2.Historique et contexte
 On est d'accord que j'aurais beau écrire le meilleur cursus de la planète, le testing c'est quand même pas le truc le plus drôle. Quoique.
 
-Mais du coup, l'idée c'est que ce soit le moins pénible possible, car à la moindre friction, tes collègues, ou toi même vont avoir envie de ne pas écrire ni modifier les tests.
+Mais, l'idée c'est que ce soit le moins pénible possible, car à la moindre friction, tes collègues, ou toi même vont avoir envie de ne pas écrire ni modifier les tests.
 
 Et ça c'est pas ce que tu souhaites. Tu souhaites que ce soit fastoche à écrire, mais aussi fastoche à relire, corriger et modifier.
 
@@ -266,7 +266,7 @@ Un autre outil super cool c'est le `subject`.
 On en a parlé dès le premier jour, le subject c'est exactement comme le sujet de la phrase `expect(subject).to be(something)`.
 "Le chien doit être poilu" => `expect(dog).to be_furry`
 
-Ok... mais du coup RSpec a poussé le bouchon jusqu'à en faire un objet à part entière.
+Ok... mais RSpec a poussé le bouchon jusqu'à en faire un objet à part entière.
 
 ### 3.3.1 Il y a toujours un subject....
 En vrai quand on écrit un `expect` il y a un sujet qui est implicite.
@@ -351,7 +351,7 @@ Ainsi tu peux en créé plusieurs.
 ### 3.3.3 Attention au bug de l'espace.
 Il y a tout de même un piège à abuser de Subject. En fait le subject explicite est un helper qui va éxécuter la commande située entre les accolades `{ du code ruby }`.
 
-Du coup tu pourrais très bien tombé dans ce piège :
+Par voie de fait tu pourrais très bien tomber dans ce piège :
 
 ```ruby
 RSpec.describe 'Piège en haut subject' do

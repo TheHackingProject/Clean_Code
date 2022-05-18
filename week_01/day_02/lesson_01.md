@@ -109,7 +109,7 @@ Et elle le fait sur la base de ce qu'elle reçoit.
 
 Simple.
 
-Du coup on est d'accord qu'on va tester qu'elle renvoie bien `true` lorsqu'elle reçoit `3`. C'est ça son comportement canonique.
+On est donc d'accord qu'on va tester qu'elle renvoie bien `true` lorsqu'elle reçoit `3`. C'est ça son comportement canonique.
 
 Le reste, c'est pas forcément obligatoire à tester.
 
@@ -230,7 +230,7 @@ Oui cette méthode aussi est dégueux. Je sais. Il faut bien comprendre que tous
 Et pendant que Guillaume commence à arroser d'essence l'intérieur du monastère, regardons de plus près cette méthode.
 Elle modifie deux variables existantes : `errors` et `members` et renvoient true ou false suivant les cas.
 
-Du coup la principale difficulté pour tester cette méthode, c'est encore de trouver les différents cas possibles.
+La principale difficulté pour tester cette méthode, c'est encore de trouver les différents cas possibles.
 
 On pourrait le faire de tête, certains y arrivent, mais je préfère te donner un outil pour y parvenir quelque soit la situation dantesque : l'[algèbre de bool](https://fr.wikipedia.org/wiki/Alg%C3%A8bre_de_Boole_(logique)).
 Alors on va pas rentrer dans la théorie mathématique rassure-toi. Juste dans le principe simple des ensembles.

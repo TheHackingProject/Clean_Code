@@ -58,7 +58,7 @@ Le matcher qui va bien pour cet exemple c'est : `output('YOUHOU X').to_stdout`.
 
 Super.
 
-Mais du coup on doit bien à un moment "simuler" un utilisateur rentrant la chaine de caractère 'X' quelque part pour pouvoir écrire le fameux :
+Mais on doit bien à un moment "simuler" un utilisateur rentrant la chaine de caractère 'X' quelque part pour pouvoir écrire le fameux :
 ```ruby
 expect(terminal_input).to output('YOUHOU X').to_stdout
 ```
