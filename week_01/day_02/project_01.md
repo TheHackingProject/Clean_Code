@@ -1,24 +1,50 @@
-# Titre du projet
+# Nouvelle Startup, nouvelle vie !
 <!-- Description du projet au format texte et en 1 paragraphe max (pas plus) -->
 A ton tour de décrire QUOI tester.
 
 ## 1. Introduction
-Tu te souviens de ce bon vieux TicTacToe des familles qui t'avait fait suer autant que si t'avais fait de la muscu dans un sauna ?
-Eh ben on va le tester.
+Fort de ton expérience accumulée chez Bürgerroy, tu t'es dit que tu ne pouvais pas resté dans une équipe aussi mal structurée.
+Tu es donc partie dans une startup super prometteuse mais encore très early stage, qui propose un jeux pour mobile dernier cri en pay-to-win.
+
+Tes exploits chez Bürgerroy en terme de testing ont fait de toi une super star en RSpec. Ton job, c'est d'accompagner la CTO dans la limitation de dettes technique.
+Le jeux n'en est qu'au MVP, mais il est validé par les stakeholders, et tout le monde mise dessus.
+Avant d'aller plus loin : il faut avoir une suite de tests afin de pouvoir itérer sereinement sans la crainte de tout péter.
+
+Bref. Gros challenge, mais après Bürgerroy, plus rien ne te fais peur.
+
+Suprise, ta CTO à fait THP en 2018.
+Et tu te souviens de ce bon vieux TicTacToe des familles qui t'avait fait suer autant que si t'avais fait soulever des haltères dans un sauna ?
+Eh ben c'est celui que ta CTO à fait pendant son cursus.
+
+Bon courage.
 
 ## 2. Le projet
-Ce projet est vraiment pas compliqué.
-Il faut décrire qu'est ce qu'il faudrait tester si on voulait passer le code de ce TicTacToe sous RSpec.
+Ok. Ce n'est pas le jeu de tes rêves... mais il y a de l'argent (et de la gloire) en vue.
 
-Clone ce [repo](https://github.com/TheHackingProject/TicTacToe) et observe comment il fonctionne.
+Pour que le jeu passe à l'étape supérieur, il est important de définir ce qui fait que le MVP fonctionne.
+Il faut donc le spécifier.
 
-Ne sois pas perturbé. Ce n'est pas le meilleur code du monde pour faire un TicTacToe. Pour être franc c'est celui que j'avais fait lors de la session 5 de THP il y a quelques années maintenant.
+Ta CTO attend donc de toi de décrire ce qu'il faudrait tester si on voulait passer le code de ce TicTacToe sous RSpec.
+
+Pour cela, comme tu fais désormais partie de la société : tu peux cloner ce [repo](https://github.com/TheHackingProject/TicTacToe) et observer comment il fonctionne.
+
+Ne sois pas perturbé. Ce n'est pas le meilleur code du monde pour faire un TicTacToe. On le sait. C'est le principe du MVP.
 
 L'idée est d'aller parcourir chaque fichier `.rb` et d'écrire les tests unitaires pour chacune des méthodes que tu trouveras dans ces fichiers.
 
 
 ## 3. Rendu attendu
-Ce qu'on attend de toi c'est un repo contenant un simple fichier markdown avec ce format
+Non non non. Tu ne feras pas de code aujourd'hui. C'est bien trop important. Dans le monde professionnel on prend le temps. On veut faire les choses bien.
+
+(Pour le coup ce n'est pas une blague, je suis sérieux).
+
+Donc on va faire une réunion. On attend de toi que tu décrives d'abord ta stratégie de tests.
+Le jeu tu le connais.
+RSpec : on t'as recruté pour.
+
+Maintenant on veut savoir QU'EST CE QUI devra être testé : comment et pourquoi.
+
+Pour préparer cette réunion avec ta CTO, tu vas créer un repo contenant un simple fichier markdown avec ce format
 
 ```markdown
 # Spec TicTacToe
@@ -38,12 +64,18 @@ etc...
 
 ```
 
-On s'attend uniquement à avoir des tests dit unitaires, c'est à dire qu'on test chaque méthode séparément. Si une méthode en appelle une autre, on peut écrire : `on s'attend à ce que la méthode truc_mumche appelle la méthode 'chose' du fichier xxx.rb`
+De cette manière ta CTO verra que tu est clairement geek. Ça l'empliera de joie.
+
+Pour le moment, on ne sait pas comment le jeu sera encapsulée pour une appli mobile : donc on s'attend uniquement à avoir des tests dit unitaires, c'est à dire qu'on test chaque méthode séparément. Si une méthode en appelle une autre, on peut écrire : `on s'attend à ce que la méthode truc_mumche appelle la méthode 'chose' du fichier xxx.rb`
 On te laisse le soin de voir et de décrire les cas qu'il est nécessaire de tester.
 
-Tu seras évalué à la fois sur :
-- les points critiques, c'est-à-dire ce qu'il faut impérativement tester
-- les points importants mais moins grave, i.e les choses qu'il faudrait tester si on est parano.
+Pour cette réunion on t'attend particulièrement sur les points suivants :
+- les points critiques, c'est-à-dire ce qu'il faut impérativement tester.
+- les points importants mais moins grave, i.e les choses qu'il faudrait tester si on était parano.
 - les points qu'il ne fallait pas tester. En effet, il y a des méthodes, ou parties de méthodes ou des use cases qu'il n'est pas nécessaire de tester. On vérifiera demain que tu ne tombe pas non plus dans une frénésie de tests inutiles ou redondant.
+
+N'oublie pas, dans une startup : Cash is King. Le temps jouera contre toi. Donc ne sois pas trop gourmand en quantité de tests. Privilégie la qualité. Ou alors ai de bons arguments.
+
+La réunion est demain matin.
 
 Good luck.
