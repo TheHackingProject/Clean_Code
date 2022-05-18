@@ -1,9 +1,9 @@
 # Doc, my old friend
-La doc d'RSpec, de l'aveu des contributeurs eux-mêmes, c'est franchement le bordel.
+La doc d'RSpec, de l'aveu des contributeurs eux-mêmes, c'est franchement mal organisé et pas beginner friendly.
 Je t'explique comment t'y retrouver.
 
 ## 1. Introduction
-Effectivement, la documentation d'RSpec, tout le monde le dit : c'est un merdier, c'est pas compliqué on dirait ma piaule.
+Effectivement, la documentation d'RSpec, tout le monde le dit : c'est le foutoir, c'est pas compliqué on dirait ma piaule.
 
 Toutefois, avec un peu d'aide et un chien d'aveugle on peut s'y retrouver et même prendre gout à la manière dont elle est rédigée.
 (Si je te jure, j'ai même appris des trucs en écrivant ce cours !)
@@ -17,10 +17,10 @@ RSpec, si tu te souviens bien ce que je t'ai raconté il y a quelques jours est 
 
 Et donc... la doc aussi.
 
-De plus, le site officiel ne porte absolument pas le bon nom : [relishapp](https://relishapp.com/). Mais oui c'est bien celui-là.
+De plus, le site officiel ne porte absolument pas le bon nom : [relishapp](https://relishapp.com/). Oui la doc est bien là.
 
 ## 3. La doc
-Clairement ya pas grand chose sur la page d'accueil : [relishapp](https://relishapp.com/).
+Clairement il n'y a pas grand chose sur la page d'accueil : [relishapp](https://relishapp.com/).
 Mais en fonction de ce que tu cherches, tu trouveras ta réponse dans une des parties de la doc...
 Sur la page d'accueil si tu regardes en bas à droite, tu trouveras les liens vers les différentes parties :
 - [rspec/rspec-rails](https://relishapp.com/rspec/rspec-rails/docs)
@@ -48,7 +48,7 @@ Voilà comment on se promène dans une des docs des gems d'RSpec.
 ### 3.2. Comment ça se lit
 Toujours à partir d'[rspec/rspec-expectations](https://relishapp.com/rspec/rspec-expectations/docs), va dans [Built in matchers](https://relishapp.com/rspec/rspec-expectations/v/3-11/docs/built-in-matchers).
 
-Prends une grande inspiration : ça va bien se passé.
+Prends une grande inspiration : ça va bien se passer.
 
 En gros tu viens d'aller au "Sommaire" du sous dossier "Built in matchers" de la doc d'rspec/rspec-expectations.
 
@@ -73,10 +73,10 @@ Maintenant que je t'ai expliqué un peu et que tu es capable de lire du RSpec re
 Ce titre, c'est l'objet de ce sur quoi vont s'orienter les prochains tests.
 
 ### 3.2.2 Given a file named "compare_using_eq.rb" with:
-Cette partie est vachement intéressante. Elle explique que si vous copiez le contenu qui suit dans un fichier nommé `compare_using_eq.rb` (ou comme vous voulez hein), et bien vous pourrez l'éxécuter sans erreur.
+Cette partie est vachement intéressante. Elle explique que si tu copies le contenu qui suit dans un fichier nommé `compare_using_eq.rb` (ou comme tu veux), et bien tu pourras l'éxécuter sans erreur.
 
 ### 3.2.3 Le block qui suit
-Dans ce bloc vous y trouvez (si vous n'avez pas changé la version d'RSpec dans le menu déroulant) les lignes suivantes :
+Dans ce bloc tu y trouveras (si tu n'as pas changé la version d'RSpec dans le menu déroulant) les lignes suivantes :
 ```ruby
 RSpec.describe "a string" do
   it "is equal to another string of the same value" do
@@ -95,25 +95,25 @@ RSpec.describe "an integer" do
 end
 ```
 En gros ce sont tous les cas de figures possibles.
-Les description des `RSpec.describe` vous donne le contexte, celui des `it` des précisions quant au use case.
+Les description des `RSpec.describe` te donne le contexte, celui des `it` des précisions quant au use case.
 
-A vous ensuite de lire les lignes expect et de les comprendre.
+A toi ensuite de lire les lignes expect et de les comprendre.
 
 ### 3.2.4 Le mot de la fin
-Juste en dessous de ce bloc vous trouvez pour finir
+Juste en dessous de ce bloc tu trouveras pour finir
 ```markdown
 When I run rspec `compare_using_eq.rb`
 Then the output should contain `"3 examples, 0 failures"`
 ```
 
-En gros cela vous dit le résultat auquel vous attendre si vous lancez la commande RSpec sur le bloc qui précède.
+En gros cela te dit le résultat auquel t'attendre si tu lances la commande RSpec sur le bloc qui précède.
 
-Faites-y bien attention. Si vous n'avez pas le même résultat c'est que c'est un signe d'une mauvaise config, ou d'un parasite quelque part dans votre repo.
+Faites-y bien attention. Si tu n'a pas le même résultat c'est que c'est un signe d'une mauvaise config, ou d'un parasite quelque part dans votre repo.
 
 De temps en temps, la documentation indique par exemple que certains tests fails. C'est dans ce cas en général abordé dans les description du bloc, et cela donne une indication sur ce qu'il faut comprendre du fonctionnement.
 
 ## 4. Points importants à retenir
 La doc est divisé en plusieurs parties distinctes correspondant aux diverses gem qu'il est possible d'installer séparément.
-Le rangement d'un point particulier (les matchers par exemple) dans une des parties de la doc n'est pas forcément intuitif. Une recherche Google ou l'expérience vous en dira plus.
+Le rangement d'un point particulier (les matchers par exemple) dans une des parties de la doc n'est pas forcément intuitif. Une recherche Google ou l'expérience t'en dira plus.
 
 La doc explique RSpec en utilisant RSpec : d'où son caractère franchement rebutant de prime abord.
