@@ -46,7 +46,7 @@ On en parlera pas à Guillaume, mais en vrai les tests, c'est mieux s'ils passen
 ```
 Cela permet de trouver les bugs provoquer par une suite de commande (requêtes HTTP par exemple) qui provoquerai un bug.
 Cette config fait qu'RSpec lancera donc les tests dans un ordre aléatoire, et te rendra à l'issue, qu'il y ai une failure ou non, un code d'ordre, nommé `--seed`. Si tu le veux tu pourras relancer ta suite de test exactement dans le même ordre en faisant :
-```shell
+```console
 bundle exec rspec --seed xxx
 ```
 où xxx est le numéro du seed qu'RSpec t'avait donné.

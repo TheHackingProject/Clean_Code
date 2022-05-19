@@ -42,7 +42,7 @@ Bien vu ! Il existe une gem dédiée à rails : ***rspec-rails***. Elle t'offre 
 
 ##### 3.1.1.3 Installation
 Bien sûr tu peux tout à fait installer toutes ces gems séparément. Tu peux donc très bien taper dans ton terminal :
-```shell
+```console
 gem install rspec-core
 ```
 cela va fonctionner et te donner accès à la commande rspec. Cela est très pratique à savoir si jamais tu as besoin uniquement de `rspec-expectation` dans un projet qui utilise mini-test par exemple.
@@ -55,15 +55,15 @@ gem install rspec
 normalement cela te donne accès aux 3 gems utiles ainsi qu'à celle que je t'ai demandé d'oublier.
 
 Pour être sûr que tout est rentré dans l'ordre tu peux exécuter la commande :
-```shell
+```console
 rspec --version
 ```
 ou
-```shell
+```console
 rspec -v
 ```
 qui doit normalement te renvoyer les lignes suivantes :
-```shell
+```console
 RSpec 3.11
   - rspec-core 3.11.0
   - rspec-expectations 3.11.0
@@ -85,7 +85,7 @@ C'est pas compliqué, mais cela va modifier la manière de lancer RSpec. On voit
 <!-- blabla -->
 #### 3.2.1 Celui que tu viens d'installer
 Lancer RSpec quand tu es sur ta propre machine et que tu ne t'es pas pris la tête avec un Gemfile, tu peux simplement exécuter la commande :
-```shell
+```console
 rspec
 ```
 dans le dossier où tu veux qu'RSpec se lance.
@@ -101,7 +101,7 @@ Non pas que ça te dérange mais si tu exécutes la commande `rspec -v` tu verra
 Mais tu vas également surement te taper un petit warning. Et puis... comment en être véritablement sûr dans le feu de l'action ?
 
 Et bien c'est simple :
-```shell
+```console
 bundle exec rspec
 ```
 est la commande qu'il te faut.
@@ -118,7 +118,7 @@ Note tout de même que pour les projets récents, le risque n'est pas bien lourd
 
 #### 3.2.3 `rspec` c'est bien... mais `rspec` avec option c'est mieux.
 lance un petit
-```shell
+```console
 rspec --help
 ```
 pour voir.
@@ -132,14 +132,14 @@ Quand on écrit des tests, même quand on est maso et qu'on aime ça, on a pas e
 Pour info l'application Airfrance à une suite de tests qui mets plus de 45 minutes à tourner (non pour le coup, ce n'est pas une blague).
 
 Donc évidemment quand t'as corrigé une typo dans un fichier et que tu veux juste t'assurer que t'as rien pété, tu vas simplement exécuté :
-```shell
+```console
 rspec spec/chemin/vers/ton/fichier_spec.rb
 ```
 
 Et cela ne lancera rspec que sur le fichier en question.
 
 On peut même aller encore plus loin en faisant :
-```shell
+```console
 rspec spec/chemin/vers/ton/fichier_spec.rb:15
 ```
 
@@ -150,13 +150,13 @@ Ahhh... alors celui là c'est mon favori. Il m'a fait briller de nombreuses fois
 En fait c'est tout con.
 Tu lance rspec une première fois... certains tests sont au vert. D'autres au rouge.
 Flemme de lancer la commande :
-```shell
+```console
 rspec fichier1_spec.rb:4 fichier2_spec.rb:12 ... fichierN_spec.rb:42
 ```
 ?
 
 Pas de panique :
-```shell
+```console
 rspec --only-failures
 ```
 ne lancera que les tests qui ont précédemment échoués. Une fois corrigé, le test sortira en vert, et sera retiré de cette liste et ne sera plus exécuté la prochaine fois que relancera la commande. ![Magique](https://c.tenor.com/SWKI18Zs_H8AAAAd/magic-meme.gif)
@@ -171,7 +171,7 @@ Cela créera un fichier `example.txt` dans le dossier `spec/`. Mais tu peux auss
 
 Tu as tout de même encore trop de tests qui sont au rouge ?
 Pas de panique, tu as dans ce cas, avec la même config :
-```shell
+```console
 rspec --next-failure
 ```
 qui ne lancera qu'un seul test précédemment échoué à la fois (toujours dans le même ordre). Donc tu corriges ton code pour faire passer ton test au vert et HOP rpsec ira directement au test suivant jusqu'à ce qu'il n'y en ai plus.
