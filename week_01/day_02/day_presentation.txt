@@ -1,6 +1,6 @@
 Ce matin vous avez survécue à votre première review de tests.
 
-Alors ? ça fait pas du bien de se sentir powerfull en RSpec ?
+Alors ? ça fait du bien de se sentir powerfull en RSpec ?
 
 Bon hier les tests étaient guidés, vous saviez quoi tester.
 Aujourd'hui, on va apprendre comment on fait pour savoir QUOI tester et pourquoi.

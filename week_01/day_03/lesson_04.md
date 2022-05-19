@@ -48,18 +48,18 @@ end
 ```
 n'ont pas à être testé par nature. Cela parait évident mais il faut le dire.
 
-Voilà comment fonctionne grosso merdo un outil de coverage.
+Voilà comment fonctionne grosso modo un outil de coverage.
 
 Il en existe plein : SonarQube, Track Ruby, SonarCloud, Codecov. Il existe même des [extensions VS Code](https://marketplace.visualstudio.com/items?itemName=markis.code-coverage) qui te souligne les parties du code qui ne sont pas couvertes par des test.
 C'est un peu comme les IDE, chacun sa paroisse... Pour ce cursus on utilisera SimpleCov.
 
 Pourquoi ?
-Parce que c'est le premier que j'ai installé de ma vie.
+Parce que c'est le premier que j'ai installé de ma vie, et il fallait bien que j'en choisisse un.
 
 ## 3. SimpleCov
 
 ### 3.1. Installation
-Grosso merdo ici on va simplement suivre [la doc](https://github.com/simplecov-ruby/simplecov) de SimpleCov.
+Ici on va simplement suivre [la doc](https://github.com/simplecov-ruby/simplecov) de SimpleCov.
 On va commencer par l'ajouter à notre Gemfile. On le mettra dans le groupe de test dans le cas d'une app rails.
 ```ruby
 gem 'simplecov', require: false
@@ -106,7 +106,7 @@ Je te propose en exercice de m'écrire deux test :
 - On s'attend à ce que `is_3('toto')` soit false
 - On s'attend à ce que `is_3(3)` soit true
 
-Je te conseille de bien prendre le temps de te créé un mini repo avec RSpec dedans et tout, et de vraiment faire l'exo. Cela t'entrainera pour le projet.
+Je te conseille de bien prendre le temps de te créé un mini repo avec RSpec dedans, et de vraiment faire l'exercice. Cela t'entrainera pour le projet.
 
 C'est bon ?
 
@@ -128,7 +128,7 @@ et un coverage de 100%...
 Sauf qu'il te manque un cas.
 Celui où la méthode renvoie `nil`.
 
-Ainsi c'est la conclusion de cette ressource. Attention : 100% de Coverage ne veut pas dire que tes tests couvrent tous les cas.
+Ainsi c'est la conclusion de cette ressource. Attention : 100% de Coverage ne veut pas dire que tes tests couvrent tous les cas d'usage de ta méthode ou de ta classe.
 
 ## 4. Points importants à retenir
 On a vu comment installer SimpleCov, un outil de coverage parmis tant d'autres.

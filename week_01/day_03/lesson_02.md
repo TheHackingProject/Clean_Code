@@ -3,7 +3,7 @@ Une petite ressource vite fait histoire que tu cherches pas des plombes comment 
 
 ## 1. Introduction
 Le projet du jour, c'est pas d'la tarte au citron.
-Pourquoi il te faut les bonnes armes. Et pour éviter que tu fouilles pendant des plombes dans l'armurerie je t'offre cette mini ressource.
+C'est pourquoi il te faut les bonnes armes. Et pour éviter que tu fouilles pendant des heures dans l'armurerie je t'offre cette mini ressource.
 
 ## 2. Les mocks
 Si tu as vu Hunger Games en VO tu dois te souvenir du [Mockingjay](https://fr.wikipedia.org/wiki/Moqueur#:~:text=Le%20geai%20moqueur%20(Mockingjay%20en,de%20celui%20de%20sa%20famille.), cet oiseau qui imite les sifflements qu'il entend.
@@ -58,7 +58,7 @@ Le matcher qui va bien pour cet exemple c'est : `output('YOUHOU X').to_stdout`.
 
 Super.
 
-Mais du coup on doit bien à un moment "simuler" un utilisateur rentrant la chaine de caractère 'X' quelque part pour pouvoir écrire le fameux :
+Mais on doit bien à un moment "simuler" un utilisateur rentrant la chaine de caractère 'X' quelque part pour pouvoir écrire le fameux :
 ```ruby
 expect(terminal_input).to output('YOUHOU X').to_stdout
 ```
@@ -109,6 +109,6 @@ Pour tester une sortie dans le terminal on peut utiliser le matcher `output('que
 Pour simuler une entrée dans le terminal, on créé juste avant le `expect`, un spy qui va remplacer l'interaction avec le terminal : `allow($stdin).to receive(:gets).and_return('X')`
 
 ## 4. Pour aller plus loin
-Si vraiment t'es maso tu peux te lancer dans [cette doc](https://relishapp.com/rspec/rspec-mocks/docs/basics/test-doubles).
+Si vraiment tu as l'âme masochiste, je ne te jugerai pas, et tu peux te lancer dans [cette doc](https://relishapp.com/rspec/rspec-mocks/docs/basics/test-doubles).
 
 Sinon tu attends vendredi et tu auras une autre ressource plus friendly.
