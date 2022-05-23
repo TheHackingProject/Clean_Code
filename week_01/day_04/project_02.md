@@ -1,0 +1,9 @@
+## 1. Projet Bonus
+
+Vous aurrez surement remarqué, grâce à vos tests, de meilleurs manières de faire les choses.
+
+Si vous vous sentez vraiment chaud, vous pouvez donc proposer une nouvelle PR afin de refactor le code pour qu'il soit plus lisible, plus efficace bref : plus Clean, tout en faisant en sorte que les différentes fonctionnalités restent les mêmes et que les tests continues de passer.
+
+## 2. Rendu attendu
+
+Un deuxième lien vers une PR du projet final donné, dans laquelle il y a toutes les modifications qui amènent à 100% de coverage sur l'app.
