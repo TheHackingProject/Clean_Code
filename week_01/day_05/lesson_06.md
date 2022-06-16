@@ -43,11 +43,28 @@ Et tout ces types d'objets peuvent avoir tous les types de comportements décrit
 
 Tu comprends maintenant ma réticence à te l'expliquer trop tôt.
 
-## 3. La ressource
+## 3. Techniquement et concrêtement
 
+### 3.1. Le cas générique.
+Lance une console irb et dedans, tape :
+```ruby
+require 'rspec/mocks/standalone'
+```
+Cela doit te renvoyer `true` pour te confirmer que tu pourras lancer toutes les commandes de ce cours.
 
-### 3.1. Première sous partie
+Lorsqu'on écrit
+```ruby
+mario = double
+#<Double (anonymous)>
+```
+on ne précise pas grand chose si ce n'est qu'on utilise un double.
+Et comme tous les objets Ruby, le double va accepter qu'on lui passe certaines méthodes, et va t'insulter dans d'autres cas. La différence, c'est que lorsqu'il t'insulte, il le fait avec plus d'info.
 
+Essaye de passer la commande :
+```ruby
+mario.jump(on: :ennemi)
+```
+Le terminal te renverra qu'un `#<Double (anonymous)>` a reçu un message `:jump` avec `({on: :ennemi})`.
 
 ### 3.2. Deuxième sous partie
 
