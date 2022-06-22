@@ -4,10 +4,10 @@ A ton tour de décrire QUOI tester.
 
 ## 1. Introduction
 Fort de ton expérience accumulée chez Bürgerroy, tu t'es dit que tu ne pouvais pas resté dans une équipe aussi mal structurée.
-Tu es donc partie dans une startup super prometteuse mais encore très early stage, qui propose un jeux pour mobile dernier cri en pay-to-win.
+Tu es donc partie dans une startup super prometteuse mais encore très early stage, qui propose un jeux pour mobile dernier cri en pay-to-win : **"TTT Corp"**.
 
-Tes exploits chez Bürgerroy en terme de testing ont fait de toi une super star en RSpec. Ton job, c'est d'accompagner la CTO dans la limitation de dettes technique.
-Le jeux n'en est qu'au MVP, mais il est validé par les stakeholders, et tout le monde mise dessus.
+Tes exploits chez Bürgerroy en terme de testing ont fait de toi une super star en RSpec. Ton job, c'est d'accompagner la CTO de TTT Corp dans la limitation de dettes technique.
+Le jeux n'en est qu'au MVP, mais il est validé par les stakeholders, et tout le monde mise dessus. On veut que TTT Corp devienne la nouvelle Licorne française 🦄️🤘️!
 Avant d'aller plus loin : il faut avoir une suite de tests afin de pouvoir itérer sereinement sans la crainte de tout péter.
 
 Bref. Gros challenge, mais après Bürgerroy, plus rien ne te fais peur.
