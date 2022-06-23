@@ -1,16 +1,16 @@
 # Clean Code.
 
-Bonjour à toi et bienvenu dans ce cours de Clean Code.
+Bonjour à toi et bienvenue dans ce cours de Clean Code.
 
-Ici tu vas apprendre gloabalement à tester ton app avec RSpec
+Ici tu vas apprendre globalement à tester ton app avec RSpec
 
 ## Pourquoi ce cours.
 Quand on sort de THP, on est généralement très fort et on sait faire plein de trucs.
 Mais une chose manque cruellement : les tests.
-Que ce soit dans les cursus Fullstack ou Developpeur, on aborde ces notions. On te fait même faire des projets avec.
+Que ce soit dans les cursus Fullstack ou Développeur, on aborde ces notions. On te fait même faire des projets avec.
 On vous l'impose même dans la grille de correction des projets finaux.
 
-Pourtant, aux projets finaux, peu de groupe ont fait l'effort d'écrire plus d'un test ou deux, histoire de valider la grille de correction.
+Pourtant, aux projets finaux, peu de groupes ont fait l'effort d'écrire plus d'un test ou deux, histoire de valider la grille de correction.
 
 On le sait. C'est dur, c'est franchement lourd, et ça ne fait pas avancé les feature.
 
@@ -18,20 +18,20 @@ Seulement voilà, dans votre premier job, il faudra bien savoir le faire.
 
 
 ## Le mot de l'auteur.
-J'étais aspirant pour THP quand j'ai accepté d'écrire ce cours. On m'a proposé de l'écrire car j'ai impressionné l'équipe par mon savoir faire bien spécifique. Mais crois moi, ça n'a pas toujours été le cas. Mon histoire est particulière. Elle mérite d'être racontée pour mieux comprendre ce qui t'attend.
+J'étais aspirant pour THP quand j'ai accepté d'écrire ce cours. On m'a proposé de l'écrire car j'ai impressionné l'équipe par mon savoir-faire bien spécifique. Mais crois-moi, ça n'a pas toujours été le cas. Mon histoire est particulière. Elle mérite d'être racontée pour mieux comprendre ce qui t'attend.
 
 J'ai fait THP en 2018.
-Pour ceux qui ne me connaissent pas j'ai fait parti de [ce groupe](https://youtu.be/ELGAJjkaICU) absolument mytique.
+Pour ceux qui ne me connaissent pas j'ai fait partie de [ce groupe](https://youtu.be/ELGAJjkaICU) absolument mythique.
 
-En janvier 2019, je rejoins une boîte en tant que dèv Angular junior. Je vous passe les détails, mais cette boîte ne faisait aucun tests... jamais. C'était un peu l'enfer, le code était franchement mauvais, et le niveau des développeurs en place est resté coincé dans les années 70. Pour preuve, le backend était en [Delphi](https://fr.wikipedia.org/wiki/Delphi_(langage)) et aucun versionnage de code n'était fait. Véridique, ils n'utilisaient pas git et faisait des zip de dossier à la main.
+En janvier 2019, je rejoins une boîte en tant que dèv Angular junior. Je vous passe les détails, mais cette boîte ne faisait aucun test... jamais. C'était un peu l'enfer, le code était franchement mauvais, et le niveau des développeurs en place est resté coincé dans les années 70. Pour preuve, le backend était en [Delphi](https://fr.wikipedia.org/wiki/Delphi_(langage)) et aucun versionnage de code n'était fait. Véridique, ils n'utilisaient pas git et faisait des zip de dossier à la main.
 
-Autant dire que j'ai perdu mon temps, et que niveau dev je n'ai pas appris grand chose.
+Autant dire que j'ai perdu mon temps, et que niveau dev je n'ai pas appris grand-chose.
 
-J'ai donc chercher un nouveau job en ruby cette fois, et ai fini par décroché le Graal dans une superbe startup Parisienne faisant de l'IA en Cardiologie.
+J'ai donc cherché un nouveau job en ruby cette fois, et ai fini par décrocher le Graal dans une superbe startup Parisienne faisant de l'IA en Cardiologie.
 Le recrutement annonce la couleur : "on ne veut que les top talents et rien d'autre".
-Je réussi le test technique (pourtant très très énervé). La RH m'annonce que cela faisait deux ans que personne n'arrivait jusque là dans le process, que le CTO est tout seul sur l'app en rails, et que je suis attendu comme le messi.
+Je réussis le test technique (pourtant très très énervé). La RH m'annonce que cela faisait deux ans que personne n'arrivait jusque là dans le process, que le CTO est tout seul sur l'app en rails, et que je suis attendu comme le messi.
 
-Quand j'arrive, le code est tellement clean que j'aurai pu manger sur mon IDE. Toutes les best practices sont respectées à la lettre, le workflow d'équipe est ouffissime. Je n'avais jamais vu ni cotoyé des gens aussi brillants et carré de toute ma vie.
+Quand j'arrive, le code est tellement clean que j'aurai pu manger sur mon IDE. Toutes les best practices sont respectées à la lettre, le workflow d'équipe est ouffissime. Je n'avais jamais vu ni cotoyé des gens aussi brillants et carrés de toute ma vie.
 
 Au bout de 2 jours, mon CTO m'assigne une Issue sur Github.
 C'est une rake task. Elle n'est pas testée. C'est à moi de le faire.
@@ -40,9 +40,9 @@ J'étais en PLS.
 
 En 1 mois il a fallu que j'apprenne d'un seul coup Docker, RSpec, FactoryBot, le CI, les best practices, les conventions de la boîte, la business layer de l'app, l'architecture de l'appli, Rails en API, Postman, et je te passe tout une suite de gems et d'outils tellement longue... sans oublier : apprendre la cardiologie car c'est pour ça qu'on est là.
 
-Mais le truc sur lequel j'étais en PLS, c'était RSpec. Ces tests de l'enfer qui me rendait dingue. Je ne comprennais rien, ni à comment il fallait que je les écrive, ni comment ils fonctionnaient ni rien...
+Mais le truc sur lequel j'étais en PLS, c'était RSpec. Ces tests de l'enfer qui me rendait dingue. Je ne comprenais rien, ni à comment il fallait que je les écrive, ni comment ils fonctionnaient ni rien...
 
-Et les personnes qui pouvaient m'aider me regardaient bizarrement : tu ne sais pas ça toi ? Tout le monde avait perdu de vue ce temps où c'était inconnu pour eux, et donc, ne savaient pas me l'expliquer.
+Et les personnes qui pouvaient m'aider me regardaient bizarrement : tu ne sais pas ça toi ? Tout le monde avait perdu de vue ce temps où c'était inconnu pour eux, et donc, ils ne savaient pas me l'expliquer.
 
 J'ai cravaché comme un âne et mis le paquet. Mais 5 mois plus tard on a mis fin à ma période d'essai.
 Imagine à quel point mon syndrome de l'imposteur était énorme à la sortie...
@@ -53,9 +53,9 @@ Mais arrivé en tant qu'aspirant pour THP, Guillaume, le CTO m'a dit : "Mec, en 
 
 Alors quand on m'a proposé d'écrire ce cours, j'ai pensé à moi. 8 mois plus tôt, en PLS.
 
-Ce cours, va retracer toutes les étapes d'apprentissage par lesquelles je suis passé dans la douleur. Sauf qu'on va y aller calmement, étape par étape. Sans le stress d'une app en prod et d'une hierarchie qui te mets la pression.
+Ce cours va retracer toutes les étapes d'apprentissage par lesquelles je suis passé dans la douleur. Sauf qu'on va y aller calmement, étape par étape. Sans le stress d'une app en prod et d'une hiérarchie qui te met la pression.
 
-Ce cours, c'est pour toi que je l'ai écris. Pour que tu ne vive jamais ce que j'ai vécu.
+Ce cours, c'est pour toi que je l'ai écrit. Pour que tu ne vives jamais ce que j'ai vécu.
 
 Enjoy.
 
@@ -110,7 +110,7 @@ En conséquence, les projets peuvent devenir de véritables mines d'or pour deve
 
 La différence entre les deux c'est la manière dont tu vas lire les ressources.
 
-J'ai fait en sorte qu'en lisant les ressources tu ais tout ce qu'il faut pour faire les projets.
+J'ai fait en sorte qu'en lisant les ressources, tu aies tout ce qu'il faut pour faire les projets.
 Mon conseil pour en tirer le meilleur parti est d'en faire une lecture active. Chaque fois que tu tombes sur une ligne de commande dans une ressource : essayes-là, joue avec, tente des trucs et seulement après continue de lire.
 
 C'est la clef.

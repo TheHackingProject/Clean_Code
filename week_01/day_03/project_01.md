@@ -7,8 +7,8 @@ En revanche, on t'explique que les fonds des stakeholders ne seront débloqués 
 Autrement dit, ton salaire dépend de l'argent injecté par les investisseurs dans la boîte.
 
 Pas de tests, pas de MAJ du MVP.
-Pas de MAJ du MVP, pas de soux des invests.
-Pas de soux : l'histoire s'arrête là. Adieu la gloire.
+Pas de MAJ du MVP, pas de sous des invests.
+Pas de sous : l'histoire s'arrête là. Adieu la gloire.
 
 ## 1. Introduction
 Et toi : tu veux ton salaire à la fin du mois.
@@ -23,4 +23,4 @@ N'importe quel outil de coverage annonce 100% de coverage dans le dossier lib, s
 
 Ding : une notif slack de ton CTO : T'as une review demain pour présenter l'avancée de tes travaux.
 
-A toi de briller.
+À toi de briller.

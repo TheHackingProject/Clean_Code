@@ -5,14 +5,14 @@ Les matchers représentent le dernier chaînon qu'il te manque pour te lancer da
 
 ## 2.Historique et contexte
 Dans le décryptage d'RSpec, on a vu beaucoup de nouveaux mots.
-Pourtant si tu as l'oeil affûté, et bien déjà, fait attention de ne pas te couper, mais surtout tu auras remarqué que je n'ai pas abordé la partie la plus croustillante d'un fichier RSpec : le test en lui même.
+Pourtant si tu as l'oeil affûté, et bien déjà, fais attention de ne pas te couper, mais surtout tu auras remarqué que je n'ai pas abordé la partie la plus croustillante d'un fichier RSpec : le test en lui-même.
 
 Tu sais cette fameuse partie : `expect(truc).to machin(bidule)`.
 
 Et bien on aborde cela dès maintenant.
 
 ## 3. Decryptage d'un test.
-Si dans ton parcours précédent tu as essayé malgré tout de faire des tests tu as du remarqué que c'était très pénible. La raison principale c'est que si tu sais quoi tester (déjà tu fais partie du haut du panier), tu ne sais pas forcément comment l'écrire en RSpec...
+Si dans ton parcours précédent tu as essayé malgré tout de faire des tests tu as dû remarquer que c'était très pénible. La raison principale c'est que si tu sais quoi tester (déjà tu fais partie du haut du panier), tu ne sais pas forcément comment l'écrire en RSpec...
 
 Exemple. Tu veux tester que la méthode suivante fonctionne correctement :
 ```ruby
@@ -23,11 +23,11 @@ end
 ```
 Bon on voit bien que suivant s'il y a un argument ou pas, la méthode renvoie soit la chaîne `'toto'` soit la chaîne `'tata'`.
 
-Là tu te demande : "D'accord, mais comment on écrit ça ?".
+Là tu te demandes : "D'accord, mais comment on écrit ça ?".
 
 Et 3h après t'es toujours en PLS sur stackoverflow a essayé de comprendre ce que raconte les gens...
 
-T'inquiète pas. C'est finit ça maintenant. Finit finit.
+T'inquiète pas. C'est fini ça maintenant. Fini fini.
 
 ### 3.1. Décomposer le mouvement.
 Alors déjà faut bien comprendre ce qu'on regarde.
@@ -35,12 +35,12 @@ Alors déjà faut bien comprendre ce qu'on regarde.
 Dans un example, il ne doit en général y avoir qu'un seul test. C'est comme ça. Tu peux en mettre plusieurs, mais la convention c'est : un example = un test.
 
 Mais dis-dont Jamy c'est quoi la différence entre une spec, un test et un example ?
-A première vue il n'y a pas de différence. Tous ces termes réfère à la même syntaxe de code. Mais chacun de ces trois termes a une connotation différente dans le monde du testing.
+A première vue il n'y a pas de différence. Tous ces termes réfèrent à la même syntaxe de code. Mais chacun de ces trois termes a une connotation différente dans le monde du testing.
 
 Pour un bout de code donné :
 - Un test : valide qu'il fonctionne correctement
 - Une spec : (diminutif d'une spécificité), décrit le comportement souhaité de ce bout de code.
-- Un example : montre de quelle manière ce bout de code est sensé être utilisé.
+- Un example : montre de quelle manière ce bout de code est censé être utilisé.
 
 La philosophie d'RSpec devient alors évidente : on spécifie les besoins en écrivant des fichiers de specs. Dans chaque fichier il y a des examples.
 Mais pas de tests.
@@ -83,10 +83,10 @@ expect(ma_methode(un_argument)).to
 est ce qu'on appel une `expectation`.
 C'est cet objet qui, conjointement avec `.to`, s'occupe de signaler le succès ou l'échec de l'example.
 C'est donc cet objet qui te largue un gros message d'erreur dans la tronche, ou une jolie couleur verte pleine d'espoir quand ça marche.
-On ne le manipule pas vraiment. Mais il faudra juste réfléchir à ce qu'on lui donne comme argument : ici `ma_methode(un_argument)`. Cette argument on l'appelle le **subject**.
+On ne le manipule pas vraiment. Mais il faudra juste réfléchir à ce qu'on lui donne comme argument : ici `ma_methode(un_argument)`. Cet argument on l'appelle le **subject**.
 
-La partie bizarre c'est ce `.to`. C'est aussi une méthode, qui prend cette fois ci l'argument `eq('toto')`. Cela fait partie de l'expectation.
-Note qu'il existe la méthode `.not_to` qui vérifiera qu'on obtient **PAS** quelque chose.
+La partie bizarre c'est ce `.to`. C'est aussi une méthode, qui prend cette-fois ci l'argument `eq('toto')`. Cela fait partie de l'expectation.
+Note qu'il existe la méthode `.not_to` qui vérifiera qu'on n'obtient **PAS** quelque chose.
 On peut aussi écrire `.to_not` c'est la même chose, mais selon le cas ça fait plus propre.
 
 #### 3.1.3 le Subject
@@ -107,7 +107,7 @@ est un matcher. C'est la partie responsable de comparer la valeur `'toto'` avec 
 
 Et c'est cette partie qu'il faut connaître correctement. Il en existe de plein de sortes faisant plein de choses. Ils sont composables, chainables et quand on les maîtrise on devient un peu tout puissant.
 
-Tu me crois pas ?
+Tu ne me crois pas ?
 Tiens, regarde :
 
 ```ruby
@@ -129,8 +129,8 @@ Ici les matchers utilisés sont :
 
 Le `of` ne peut s'utiliser que greffé à un autre matcher. c'est un cas un peu particulier. Il en existe d'autre assez pratique comme `and`, `or` etc...
 
-Le truc génial c'est qu'on peut même les créé si tu ne trouves pas ton bonheur.
-Je déconseille de le faire à ton niveau, mais sâches que c'est possible.
+Le truc génial c'est qu'on peut même les créer si tu ne trouves pas ton bonheur.
+Je déconseille de le faire à ton niveau, mais sache que c'est possible.
 
 ### 3.2. La cheat sheet de guedin !!
 Alors voilà, c'est simple.
@@ -212,7 +212,7 @@ Et on a également vu que le combo : `expectation(subject) matcher(valeur)` éta
 On a également parcouru une liste, certes non exhaustive, mais quand même badass des matchers qui te permettra de te sortir de quasiment toutes les situations (~80% à vue de nez).
 
 ## 5. Pour aller plus loin
-[Une liste d'alias](https://gist.github.com/JunichiIto/f603d3fbfcf99b914f86), pour toi, qui aime que ton code fasse de belles phrases lisible.
+[Une liste d'alias](https://gist.github.com/JunichiIto/f603d3fbfcf99b914f86), pour toi, qui aime que ton code fasse de belles phrases lisibles.
 [Et enfin, la liste exhaustive des matchers](https://relishapp.com/rspec/rspec-expectations/v/3-10/docs/built-in-matchers)
 Là ils y sont tous.
 Enjoy si jamais tu veux épater les potos à l'apéro mercredi.

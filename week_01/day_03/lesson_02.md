@@ -1,5 +1,5 @@
 # RSpec et les inputs / outputs de Terminal
-Une petite ressource vite fait histoire que tu cherches pas des plombes comment tester les interactions avec le terminal.
+Une petite ressource vite fait histoire que tu ne cherches pas des plombes comment tester les interactions avec le terminal.
 
 ## 1. Introduction
 Le projet du jour, c'est pas d'la tarte au citron.
@@ -15,7 +15,7 @@ Un mock est un objet qui va se comporter "comme si" c'était [Insert ici ce dont
 L'avantage c'est que tu pourras contrôler avec finesse ce qu'il se passe puisque c'est toi qui décides.
 
 ### 2.1. Dans la nature
-Si tu te retrouve à devoir fouiller les internets, sache que cela peut porter beaucoup de noms différents suivant le framework, mais aussi pour un framework donné (comme RSpec) suivant l'usage.
+Si tu te retrouves à devoir fouiller les internets, sache que cela peut porter beaucoup de noms différents suivant le framework, mais aussi pour un framework donné (comme RSpec) suivant l'usage.
 Pour RSpec voici tous les mots clefs possibles pour cette notion:
 - double
   - Pure double
@@ -33,11 +33,11 @@ Ici je vais juste t'apprendre à t'en servir dans un cas ultra particulier.
 
 ### 2.2. Spy
 Dans le cas qui nous intéresse, on va utiliser un spy en fait.
-Un spy est un espion. On prend donc un objet qui existe, on lui place un trackeur dessus. Et dès que cet objet reçoit une méthode on l'intercepte et on remplace la valeure de réponse par la notre.
+Un spy est un espion. On prend donc un objet qui existe, on lui place un trackeur dessus. Et dès que cet objet reçoit une méthode on l'intercepte et on remplace la valeur de réponse par la notre.
 
 T'as rien pigé ?
 
-Ouais, c'est normal ma phrase c'est un peu le foutoir. Je vais clarifier ça avec un exemple concrêt : l'entrée utilisateur dans le terminal.
+Ouais, c'est normal ma phrase c'est un peu le foutoir. Je vais clarifier ça avec un exemple concret : l'entrée utilisateur dans le terminal.
 
 Imagine que tu as ce code à tester :
 
@@ -68,7 +68,7 @@ Et bien pour ça on va utiliser la ligne :
 allow($stdin).to receive(:gets).and_return('X')
 ```
 
-Ce que fait cette ligne c'est de dire : on va regarder `$stdin` (basiquement tout ce qui rentre dans le terminal par le clavier), et dès que `$stdin` reçoit la méthode `gets` (qui prend en compte les frappes clavier de l'utilisateur), alors on l'intercèpte, et, ON SE FOUT de l'utilisateur parce qu'on retournera `'X'` à la place.
+Ce que fait cette ligne c'est de dire : on va regarder `$stdin` (basiquement tout ce qui rentre dans le terminal par le clavier), et dès que `$stdin` reçoit la méthode `gets` (qui prend en compte les frappes clavier de l'utilisateur), alors on l'intercepte, et, ON SE FOUT de l'utilisateur parce qu'on retournera `'X'` à la place.
 
 Ton test s'écrit donc comme ça :
 
@@ -80,7 +80,7 @@ end
 ```
 
 ### 2.1. Attention au piège
-Avec ce que je viens de te montrer, si jamais la méthode en question n'utilise pas la méthode `gets`, mais que tu utilise quand même le spy, genre comme ça :
+Avec ce que je viens de te montrer, si jamais la méthode en question n'utilise pas la méthode `gets`, mais que tu utilises quand même le spy, genre comme ça :
 
 ```ruby
 class TrucATester
@@ -89,7 +89,7 @@ class TrucATester
   end
 end
 
-RSpec.describe 'chéri ? Ca va planter' do
+RSpec.describe 'chéri ? Ça va planter' do
   it 'does not work' do
     allow($stdin).to receive(:gets).and_return('X')
     expect(terminal_input).to eq('YOUHOU X')
@@ -97,11 +97,11 @@ RSpec.describe 'chéri ? Ca va planter' do
 end
 ```
 
-RSpec t'insultera en te disant qu'il s'attendait à ce que `$stdin` recoive la méthode `gets` mais finalement ce ne fut pas le cas....
+RSpec t'insultera en te disant qu'il s'attendait à ce que `$stdin` reçoive la méthode `gets` mais finalement ce ne fut pas le cas....
 
 Et oui.
 
-En gros RSpec considère que tu test aussi ce qu'il se passe sur `$stdin`.
+En gros RSpec considère que tu testes aussi ce qu'il se passe sur `$stdin`.
 
 ## 3. Points importants à retenir
 Pour tester une sortie dans le terminal on peut utiliser le matcher `output('quelque chose').to_stdout`
