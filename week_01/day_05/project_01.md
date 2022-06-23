@@ -8,7 +8,7 @@ Introduction qui leur explique dans les grandes lignes le projet.
 Tu vas reprendre le TicTacToe que tu as testé l'autre jour. Mais maintenant tu vas
 
 ## 3. Rendu attendu
- Ton repo avec le TicTacToe testée dans lequel tu as enlevé le fichier `lib/position.rb`.
+ Ton repo avec le TicTacToe testé dans lequel tu as enlevé le fichier `lib/position.rb`.
  Les tests doivent toujours passer.
  Il doit y avoir 100% de coverage.
 
@@ -21,4 +21,4 @@ Le code était dégueux. C'était fait exprès. Mais maintenant tu dois pouvoir 
 Maintenant tu n'as plus d'excuse et tu sais ce qu'il te reste à faire : 100% de coverage dans chacun de tes nouveaux projets 😉️.
 
 Happy testing.
-A bientôt sur le discord.
+À bientôt sur le discord.

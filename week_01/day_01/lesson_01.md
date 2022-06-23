@@ -32,7 +32,7 @@ end
 ```
 ben voilà c'est cette gem.
 
-- ***rspec-mocks :*** cette gem est responsable de ma perte de cheveux. On ne l'abordera qu'à la toute fin de ce parcours. Mais pour faire simple cela permet de tester du code qui n'existe pas encore. "To mock" signifie "imiter" en anglais. Donc de manière très basique cela permet de créer des objets qui vont pouvoir faire semblant de ce comporter comme tu en aurais besoin. Sauf qu'il n'y a pas de code derrière.... Bref. Pour le moment c'est obscure. Fais pas comme moi : ne commence pas par t'attarder sur ce point.
+- ***rspec-mocks :*** cette gem est responsable de ma perte de cheveux. On ne l'abordera qu'à la toute fin de ce parcours. Mais pour faire simple cela permet de tester du code qui n'existe pas encore. "To mock" signifie "imiter" en anglais. Donc de manière très basique cela permet de créer des objets qui vont pouvoir faire semblant de se comporter comme tu en aurais besoin. Sauf qu'il n'y a pas de code derrière.... Bref. Pour le moment c'est obscur. Ne fais pas comme moi : ne commence pas par t'attarder sur ce point.
 
 Avec tout ça vient également une 4ème gem :
 - ***rspec-support :*** celle là regroupe tout un tas de choses dont les 3 autres peuvent avoir besoin. Mais cette gem n'est pas faite pour fonctionner directement toute seule. Tu peux donc l'oublier pour le moment.
@@ -94,7 +94,7 @@ RSpec va alors aller dans le dossier `spec/` et lancer tous les tests trouvés d
 #### 3.2.2 Une autre version.
 C'est un peu différent lorsque tu veux lancer une version bien spécifique uniquement dans un projet en cours.
 Pour bien comprendre, il nous faut un peu d'imagination :
-Tu viens de récupérer le repository de quelqu'un. En bon corsaire/pirate/flibustier.e/aspirant.e/moussaillon.ne que tu es (biffer les mentions inutiles), ton réflexe est donc de faire un petit `bundle install` des familles histoire d'instaler localement toutes les gems.
+Tu viens de récupérer le repository de quelqu'un. En bon corsaire/pirate/flibustier.e/aspirant.e/moussaillon.ne que tu es (biffer les mentions inutiles), ton réflexe est donc de faire un petit `bundle install` des familles histoire d'installer localement toutes les gems.
 Cette personne, dans son Gemfile avait précisé : `gem 'rspec', '~> 3.8'`.
 Non pas que ça te dérange mais si tu exécutes la commande `rspec -v` tu verras que c'est bien la version `3.8` du projet qui est lancée... pas la `3.11` de ta machine.
 
@@ -108,7 +108,7 @@ est la commande qu'il te faut.
 
 Attention, ceci n'est pas un cours sur Bundler, et il est probable que si quelqu'un de sénior en dèv lit ces lignes, ma tête soit mise à prix.
 
-Mais je vais te faire un aveux. C'est tout de même ce que conseille deux des contributeurs principaux d'RSpec. J'ai décidé de te transmettre ce savoir tel quel.
+Mais je vais te faire un aveu. C'est tout de même ce que conseillent deux des contributeurs principaux d'RSpec. J'ai décidé de te transmettre ce savoir tel quel.
 
 
 ⚠️⚠️ Tu noteras que dans le reste de ce parcours je vais utiliser la commande `rspec` et non `bundle exec rspec` par simplicité. ⚠️⚠️
@@ -128,10 +128,10 @@ On ne va pas toutes les parcourir, car cela pourrait faire l'objet de ressources
 Mais juste je vais te présenter quelques petits tips qui te simplifieront la vie.
 
 ##### 3.2.3.1 rspec [files or directories]
-Quand on écrit des tests, même quand on est maso et qu'on aime ça, on a pas envie de se farcir de lancer l'intégralité de la suite de tests. Surtout que dans les projets classiques en entreprise, on parle de plusieurs minutes... voir heures pour certains projets.
+Quand on écrit des tests, même quand on est maso et qu'on aime ça, on a pas envie de se farcir de lancer l'intégralité de la suite de tests. Surtout que dans les projets classiques en entreprise, on parle de plusieurs minutes... voir des heures pour certains projets.
 Pour info l'application Airfrance à une suite de tests qui mets plus de 45 minutes à tourner (non pour le coup, ce n'est pas une blague).
 
-Donc évidemment quand t'as corrigé une typo dans un fichier et que tu veux juste t'assurer que t'as rien pété, tu vas simplement exécuté :
+Donc évidemment quand t'as corrigé une typo dans un fichier et que tu veux juste t'assurer que t'as rien pété, tu vas simplement exécuter :
 ```console
 rspec spec/chemin/vers/ton/fichier_spec.rb
 ```
@@ -148,7 +148,7 @@ Ceci ne lancera que le premier groupe de tests qui se trouvera à partir de la l
 ##### 3.2.3.2 rspec --only-failures
 Ahhh... alors celui là c'est mon favori. Il m'a fait briller de nombreuses fois en startup.
 En fait c'est tout con.
-Tu lance rspec une première fois... certains tests sont au vert. D'autres au rouge.
+Tu lances rspec une première fois... certains tests sont au vert. D'autres au rouge.
 Flemme de lancer la commande :
 ```console
 rspec fichier1_spec.rb:4 fichier2_spec.rb:12 ... fichierN_spec.rb:42
@@ -161,7 +161,7 @@ rspec --only-failures
 ```
 ne lancera que les tests qui ont précédemment échoués. Une fois corrigé, le test sortira en vert, et sera retiré de cette liste et ne sera plus exécuté la prochaine fois que relancera la commande. ![Magique](https://c.tenor.com/SWKI18Zs_H8AAAAd/magic-meme.gif)
 Pour que cela fonctionne il faut juste que RSpec enregistre cette liste quelque part.
-Je t'invite donc à configurer cela dans un fichier spec. Rajoute les lignes suivante dans un fichier et hop magic :
+Je t'invite donc à configurer cela dans un fichier spec. Rajoute les lignes suivantes dans un fichier et hop magic :
 ```ruby
 RSpec.configure do |config|
   config.example_status_persistence_file_path = 'spec/example.txt'
@@ -187,8 +187,8 @@ Tu peux aussi ne lancer que les tests qui ont précédemment foirés via `rspec 
 
 ## 5. Pour aller plus loin
 <!-- Quelques éléments en ligne pour aller plus loin -->
-Si t'as du temps, je t'invite à essayer de découvrir les autres fonctionnalités cachés en lisant attentivement le résultat de la commande `rspec --help`.
-Tu ne comprendras probablement pas tout, mais il y a certaines choses qui pourraient te plaire. N'oublie pas d'y revenir de temps en temps cette semaine. Tu y découvrira des pépites au gré de ta montée en compétence.
+Si t'as du temps, je t'invite à essayer de découvrir les autres fonctionnalités cachées en lisant attentivement le résultat de la commande `rspec --help`.
+Tu ne comprendras probablement pas tout, mais il y a certaines choses qui pourraient te plaire. N'oublie pas d'y revenir de temps en temps cette semaine. Tu y découvriras des pépites au gré de ta montée en compétence.
 
 Egalement si t'as le feu sacré en toi, tu peux regarder la [gem guard](https://github.com/guard/guard-rspec) qui relancera automatiquement les tests que tu viens de modifier.
 Tu peux aussi te renseigner un peu plus sur la commande `rspec --tag TAG[:value]` indiquée dans l'aide. Cela pourra te permettre plus tard dans la semaine de ne lancer que les tests controllers par exemple avec un `rspec -t type:request` qui va bien 😉️. Attention : uniquement si tu te sens super super en forme, que t'as fini d'aider les autres, et que t'as fini de prendre de l'avance sur demain.

@@ -1,23 +1,23 @@
 # Acceptances, E2E, Integration et... metadata
-Jusqu'à présent nous nous étions concentré sur l'utilisation d'RSpec, avec les tests unitaires comme terrain de jeux.
-Cette fois-ci, nous allons voir dans le cas d'une vraie app Rails comment les autres types de tests se construises et comment RSpec a déjà tout prévu pour nous simplifier la vie.
+Jusqu'à présent nous nous étions concentrés sur l'utilisation d'RSpec, avec les tests unitaires comme terrain de jeux.
+Cette fois-ci, nous allons voir dans le cas d'une vraie app Rails comment les autres types de tests se construisent et comment RSpec a déjà tout prévu pour nous simplifier la vie.
 
 ## 1. Introduction
-Nous l'avons vu Mardi dans la ressource "Quoi tester", il existe plusieurs formes de tests. Encore une fois je ne souhaite pas rentrer dans les querelles de clochers qui font rages. Il existe beaucoup de philosophie différentes toutes correctes selon moi pour des raisons différentes, toutes plus ou moins complexes, toutes plus où moins applicables suivant le contexte, les ressources en devs, ou la dette technique.
+Nous l'avons vu Mardi dans la ressource "Quoi tester", il existe plusieurs formes de tests. Encore une fois je ne souhaite pas rentrer dans les querelles de clocher qui font rage. Il existe beaucoup de philosophies différentes toutes correctes selon moi pour des raisons différentes, toutes plus ou moins complexes, toutes plus où moins applicables suivant le contexte, les ressources en devs, ou la dette technique.
 
-Ici je propose de suivre une philo relativement simple et direct dont j'ai pris la source au près de deux contributeurs de RSpec mais que je simplifierai un peu.
+Ici je propose de suivre une philo relativement simple et direct dont j'ai pris la source auprès de deux contributeurs de RSpec mais que je simplifierai un peu.
 Je t'invite donc aussi à en discuter avec les seniors de ton prochain poste, mais aussi avec les alumnis sur le Discord ou le Slack de la commu.
 
 ## 2. Quelle philo
 ### 2.1 Notre philo
 Pour faire simple et parce que cela reste tes premiers pas dans le monde du testing je t'ai proposé mardi dernier l'approche de testing suivante :
 - End to end (nommé e2e) : de bout en bout, et donc test l'app du clic sur le bouton "S'inscrire", des dimensions et couleur du bouton, jusqu'au `User` créé en base. On peut dire que cela simule le véritable parcours utilisateur et regarde si les résultats qu'on attend (ou qu'on souhaite éviter) se produisent bien.
-- Acceptance ([Tu te souviens ?](https://www.youtube.com/watch?v=Oj8bfBlwHAg)), c'est la même chose que les e2e sauf qu'on ne test pas l'interface graphique, l'UI, l'UX etc... Mais on test par exemple que si on tape dans la route `POST /articles` on se retrouve bien avec un nouvel article créé en base.
-- Integration : On test ici que les API, services, ou autres codes plus ou moins externes à l'appli (ou externe à ton équipe) se comporte comme prévu.
-- Unit (ou Unitaires en français), mais ceux là tu connais maintenant.
+- Acceptance ([Tu te souviens ?](https://www.youtube.com/watch?v=Oj8bfBlwHAg)), c'est la même chose que les e2e sauf qu'on ne test pas l'interface graphique, l'UI, l'UX etc... Mais on teste par exemple que si on tape dans la route `POST /articles` on se retrouve bien avec un nouvel article créé en base.
+- Integration : On teste ici que les API, services, ou autres codes plus ou moins externes à l'appli (ou externes à ton équipe) se comportent comme prévu.
+- Unit (ou Unitaires en français), mais ceux-là tu connais maintenant.
 
 Nous ne ferons pas de tests e2e, car ils sont généralement réservés aux gens qui font du Front. Je considère ici que vous faite du Back.
-De plus ils font en général appel à des lib complémentaires qu'il serait trop long d'aborder ici. Rassures-toi, tu as désormais largement le niveau pour aller apprendre un nouveau framework de test à la sorti de ce cursus.
+De plus ils font en général appel à des lib complémentaires qu'il serait trop long d'aborder ici. Rassure-toi, tu as désormais largement le niveau pour aller apprendre un nouveau framework de test à la sorti de ce cursus.
 
 ### 2.2 La philo RSpec
 Il faut comprendre que la gem `rspec-rails` n'a en vrai pas tout à fait la même approche. La raison c'est que la gem se doit d'être agnostique afin de pouvoir s'adapter à tout style de développement.
@@ -47,7 +47,7 @@ describe 'something' do
   # du code.
 end
 ```
-je t'avait expliqué que la méthode `describe` prenait un argument, un hash puis un bloc. Dans le bout de code qui précède on voit bien l'argument `'something'`, le bloc
+je t'avais expliqué que la méthode `describe` prenait un argument, un hash puis un bloc. Dans le bout de code qui précède on voit bien l'argument `'something'`, le bloc
 ```ruby
 do
  # du code.
@@ -73,13 +73,13 @@ describe 'something', :focus do
 end
 ```
 
-Si la valeur n'est pas donnée, elle sera instanciée à `true` par défaut. Par ailleurs, cette metadata, sera interprété par RSpec. RSpec ne lancera pas les autres tests, et se focalisera sur celui ci uniquement... quelque soit la manière dont tu essayes de le lancer.
-Je te le déconseille donc fortement, car si tu oublie de l'enlever lors de ton push, tu risques de faire passer le CI.... à tort.
+Si la valeur n'est pas donnée, elle sera instanciée à `true` par défaut. Par ailleurs, cette metadata, sera interprétée par RSpec. RSpec ne lancera pas les autres tests, et se focalisera sur celui ci uniquement... quelque soit la manière dont tu essayes de le lancer.
+Je te le déconseille donc fortement, car si tu oublies de l'enlever lors de ton push, tu risques de faire passer le CI.... à tort.
 
 Mais il en existe d'autres : `skip` par exemple, mais aussi `type` qui nous sera bien utile dans un instant.
 
 La seule chose à retenir, c'est que tu peux très bien rajouter tout ce que tu veux, RSpec n'y verra aucune objection et t'autorisera même à t'en servir.
-Pratique lorsque tu veux tagger certains tests pour une raison particulière : tu pourras ensuite ne lancer que ceux là avec la commande :
+Pratique lorsque tu veux tagger certains tests pour une raison particulière : tu pourras ensuite ne lancer que ceux-là avec la commande :
 ```console
 rspéc --tag ton_tag:sa_valeur
 ```
@@ -96,8 +96,8 @@ RSpec.desccribe ArticleController, type: :controller do
 end
 ```
 
-RSpec est capable d'interpréter la metadonnée `type` mais surtout sa valeur, et pourra charger des helpers spécifique pour l'occasion.
-Comme par exemple, une méthode de `sign_in(user)` ou encore tout simplement de quoi faire tes requêtes HTTP `get root_path` par exemple. Ces helper ne seront pas accessible dans un test qui aurait le `type: :model`.
+RSpec est capable d'interpréter la metadonnée `type` mais surtout sa valeur, et pourra charger des helpers spécifiques pour l'occasion.
+Comme par exemple, une méthode de `sign_in(user)` ou encore tout simplement de quoi faire tes requêtes HTTP `get root_path` par exemple. Ces helper ne seront pas accessiblse dans un test qui aurait le `type: :model`.
 
 L'idée derrière ça :
 - c'est de pouvoir charger uniquement ce dont tu as besoin, et donc aller plus vite
@@ -131,9 +131,9 @@ Elle se trouve ligne 58 de ton `rails_helper.rb`
 ```ruby
 config.infer_spec_type_from_file_location!
 ```
-Si tu lis le commentaire situé juste au dessus de cette ligne, tu comprends que RSpec est capable d'assigné un type, rien qu'en se basant sur l'endroit où tu as rangé la classe que tu es en train de tester.
+Si tu lis le commentaire situé juste au dessus de cette ligne, tu comprends que RSpec est capable d'assigner un type, rien qu'en se basant sur l'endroit où tu as rangé la classe que tu es en train de tester.
 
-Ainsi, ton model rangé dans le dossier `app/model` sera automatiqement de `type: :model` et ainsi de suite.
+Ainsi, ton model rangé dans le dossier `app/model` sera automatiquement de `type: :model` et ainsi de suite.
 
 ### 3.3.2 Type: :request, ou type: :controller ?
 Seulement voilà, nous, on ne veut pas tester les controller de la manière dont RSpec avec le `type: :controller`.
@@ -147,7 +147,7 @@ Ce qu'on veut c'est vérifier que lorsqu'on tape une certaine route, mettons `po
 - Demande bien au mailer d'envoyer un mail le cas échéant
 - Renvoie bien une 200 à la fin.
 
-Mais on se fout complètement de savoir si les actions du model fonctionnent, ou que le mail arrive à destination avec le bon contenu. C'est le rôle des tests unitaires.
+Mais on se fout complétement de savoir si les actions du model fonctionnent, ou que le mail arrive à destination avec le bon contenu. C'est le rôle des tests unitaires.
 Non, nous ce qu'on veut, c'est juste s'assurer que ces divers éléments ont été déclenchés, et qu'à la fin, le serveur renvoie bien une HTTP 200 à ton navigateur.
 
 Dans un autre cas on pourrait aussi simplement vérifier que le controller te renvoie une `401 Unauthorized` et te redirige vers le sign_in si tu n'es pas login par example.
@@ -187,7 +187,7 @@ Le fichier `posts_helper_spec.rb`, lui sert si tu as besoin de dry certaines par
 
 On trouve également un fichier `posts_routing_spec.rb`. Celui-ci sert à tester de manière unitaire les différentes routes. Il m'est d'avis que ce n'est pas nécessaire. La raison ? On va tester chacune des routes déjà à travers le test d'acceptation (request). Donc quelque part ce n'est pas la peine de tester unitairement les routes. Ce serait overkill, car si tes routes sont pétés, tu imagines bien que ton controller aussi, et qu'RSpec te renverra un joyeux `no route matches '/ta/route/pétée'`... Et dans ce cas tu sauras ce qu'il te reste à faire.
 
-Plusieurs fichiers de specs sont également créés afin de tester les views. A ce stade je te sens paniqué : mais comment on test les views ???? Simplement comparant le rendue HTML avec ce que l'on pense obtenir. Je te laisse regarder ces différents fichiers pour voir comment ça fonctionne. Nous on ne va pas se préoccuper de ça. Pourquoi ? Parce que souvent les app rails existent pour servir le backend et on laisse le frontend de plus en plus à un framework en JS (React / Vue etc...). Donc on ira plutôt tester dans ces framework là. Ensuite, parce qu'RSpec, très entre nous, n'est vraiment pas le meilleur framework pour tester du front. Je te laisse donc le soin d'aller plutôt voir du côté de Capybara. Qui, par ailleurs, s'intègre très très bien avec RSpec.
+Plusieurs fichiers de specs sont également créés afin de tester les views. A ce stade je te sens paniqué : mais comment on teste les views ???? Simplement en comparant le rendu HTML avec ce que l'on pense obtenir. Je te laisse regarder ces différents fichiers pour voir comment ça fonctionne. Nous on ne va pas se préoccuper de ça. Pourquoi ? Parce que souvent les app rails existent pour servir le backend et on laisse le frontend de plus en plus à un framework en JS (React / Vue etc...). Donc on ira plutôt tester dans ces framework là. Ensuite, parce qu'RSpec, très entre nous, n'est vraiment pas le meilleur framework pour tester du front. Je te laisse donc le soin d'aller plutôt voir du côté de Capybara. Qui, par ailleurs, s'intègre très très bien avec RSpec.
 
 Enfin, on trouve notre fameux fichier `spec/requests/posts_spec.rb`. Remarque bien que RSpec n'a pas créé de fichier `spec/controllers/posts_spec.rb`, mais bien un fichier request.
 
@@ -230,12 +230,12 @@ end
 Ce qu'on veut pour un tel controller, c'est qu'un user envoie la requête `POST /posts` :
 - Un post soit créé en base avec la catégorie `life style` ou celle donnée par les params.
 - La méthode `new_post_email` du mailer `UserMailer` soit appellée.
-- Qu'avec des bons paramètres on atterisse sur la page show, sinon sur la page new.
+- Qu'avec des bons paramètres on atterrisse sur la page show, sinon sur la page new.
 
 Mais on se fiche complètement de savoir si le Mailer plante, ni de quelle manière le model va géré la catégorie. En revanche on vérifie le scénario d'un bout à l'autre de la chaine. On vérifie le parcours utilisateur.
 
-Par rapport aux tests qui ont été décrit par le scaffold, il manque donc :
-- la vérification sur la catégorie du post créé
+Par rapport aux tests qui ont été décrits par le scaffold, il manque donc :
+- la vérification sur la catégorie du post crée
 - la vérification que le Mailer a bien été appelé.
 
 On pourra donc rajouter :
@@ -272,12 +272,12 @@ describe "POST /create" do
 
 Je te laisse le soin de voir comment on peut dry un peu tout ça, mais t'as compris le principe.
 Tu auras noté la subtile utilisation d'un spy pour le mailer.
-Tu auras également noté l'utilisation du `reload` qui permet d'être sûr que la base de donnée a bien pris en compte ta création de post.
+Tu auras également noté l'utilisation du `reload` qui permet d'être sûr que la base de données a bien pris en compte ta création de post.
 
 ### 4.1 Integration
-Concernant les tests d'intégrations, voici un exemple qui va te parler. Imagines que tu créé une app pour gérer tes pokemons. Pour cela, intelligemment, tu utilise l'API [pokeapi](https://pokeapi.co/).
+Concernant les tests d'intégrations, voici un exemple qui va te parler. Imagine que tu créés une app pour gérer tes pokemons. Pour cela, intelligemment, tu utilises l'API [pokeapi](https://pokeapi.co/).
 
-Et forcément c'est intelligent de créé un service pour aller récuperer ce dont tu as besoin sur cette api.
+Et forcément c'est intelligent de créér un service pour aller récupérer ce dont tu as besoin sur cette api.
 Je te laisse lire la documentation de [Pokeapi](https://pokeapi.co/docs/v2#resource-listspagination-section) pour comprendre les quelques lignes qui suivent.
 
 Mais dans l'ensemble j'ai essayé d'avoir le code le plus "`Clean`™️" possible.
@@ -325,7 +325,7 @@ En fait, de manière très simple ce qu'on veut c'est tester, c'est que tous les
 create_abilities_from_pokemon( create_from_json_pokemon(get_pokemon('pikachu')))
 ```
 - ne plante pas et...
-- ... créé bien 2 abilities et 1 pokemon en base et avec les bonnes valeures.
+- ... créé bien 2 abilities et 1 pokemon en base et avec les bonnes valeurs.
 
 Voilà. C'est aussi simple que ça.
 
@@ -348,7 +348,7 @@ context 'with incorrect pokemon name' do
 end
 ```
 
-On oublie pas de tester aussi que toute la chaine plante si on renseigne un mauvais paramètre
+On n'oublie pas de tester aussi que toute la chaine plante si on renseigne un mauvais paramètre
 
 De même on pourrait imaginer (avec un service plus complexe) qu'il faudrait aussi bien vérifier les différents attributs des JSON renvoyés par l'API. Car si jamais l'API change, il faut que certains tests cassent. De cette manière il n'y aura jamais de surprise en prod !
 
@@ -363,13 +363,13 @@ Sinon laisser par défaut ou mettre un `type: :model` suffit largement en géné
 ## 5. Points importants à retenir
 - Model, mailers et autres services devront être testés unitairement.
 - Si on place les fichiers spec au bon endroit, il n'y a pas besoin de préciser ce que l'on fait avec une metadata.
-- Les controllers eux, seront testés à travers un test d'acceptance qui englobera le routeur, le controller, le model et même d'autres classes qui pourraient être impliqués. On le fera par le biais de la metadata `type: :request` que l'on mettra au début de son fichier spec. Ce fichier on le placera gentillement dans le dossier `/spec/request/` d'ailleurs.
+- Les controllers eux, seront testés à travers un test d'acceptance qui englobera le routeur, le controller, le model et même d'autres classes qui pourraient être impliqués. On le fera par le biais de la metadata `type: :request` que l'on mettra au début de son fichier spec. Ce fichier on le placera gentiment dans le dossier `/spec/request/` d'ailleurs.
 
 - En fonction de la complexité de l'app, ou de la criticité, on pourra englober également les services et autres API tierces dans des tests d'intégrations. Ceux-ci ne sont pas bien compliqués et il suffit de décrire ce qu'on attend du service dans les différents cas de figure. Sans se préoccuper de son fonctionnement interne.
-- Enfin, si tu te sert vraiment beaucoup d'une API tierce, et qu'elle devient critique pour ton appli, il est alors sage de créé un fichier qui test scrupuleusement que son fonctionnement n'a pas changé par rapport à sa documentation.
+- Enfin, si tu te sers vraiment beaucoup d'une API tierce, et qu'elle devient critique pour ton appli, il est alors sage de créer un fichier qui teste scrupuleusement que son fonctionnement n'a pas changé par rapport à sa documentation.
 
 ## 6. Pour aller plus loin
-J'ai conscience que cette ressource est déjà bien assez lourde. Mais je sais aussi que tu reviendra plus tard relire cette ressource, lorsque tu seras plus à l'aise avec ces tests.
+J'ai conscience que cette ressource est déjà bien assez lourde. Mais je sais aussi que tu reviendras plus tard relire cette ressource, lorsque tu seras plus à l'aise avec ces tests.
 
 Alors je te laisse ça là, quand ton mal de tête aura cessé.
 
@@ -379,7 +379,7 @@ Un petit tableau des différents `type:` de tests sous RSpec :
 |---|---|---|---|
 | :feature | Pour tester un parcours utilisateur entier | - l'alias feature (describe) - l'alias scenario (it) - Accès à l'API de capybara - Les routes au format  `some_route_path` | Il faut installer  la gem Capybara pour ça |
 | :request | Acceptance test On prend une route, et  on vérifie le résultat  final.  Si besoin on peut déborder un peu, en faisant un parcours utilisateur impliquant plusieurs routes. Mais je ne recommande pas. | - request helpers comme `get /index` ou `post /create` etc..  - request matchers comme `redirect_to`, `have_http_status`  - Les routes au format  `some_route_path` |  |
-| :model | Tests unitaires sur son model | - Permet d'avoir les Database Transactions (pas de persistence des objets en base) |  |
+| :model | Tests unitaires sur son model | - Permet d'avoir les Database Transactions (pas de persistance des objets en base) |  |
 | :controller | Tests unitaires sur les controllers | Idem :feature. Sans le helper `redirect_to`, mais avec le helper `route_to` | Par défaut ne fait de  render des views. Il faut appeler le render explicitement une fois la requête faite en appelant `render_view` |
 | :view | Tests unitaires sur les views | - Permet le helper `assign` afin d'utiliser (et de remplir) les variables comme l'aurait fait le controller. |  |
 | :helper | Tests unitaires des modules que l'on place dans les dossiers `/helpers`. | - Permet aussi le `assign` afin d'utiliser (et de remplir) les variables. |  |
@@ -389,5 +389,5 @@ Un petit tableau des différents `type:` de tests sous RSpec :
 
 - Une excellente vision de Martin Fowler (Oncle Bob) sur les tests d'intégration:  https://martinfowler.com/bliki/IntegrationTest.html
 
-D'une manière générale, et vu qu'il s'agit de philosophies, de points de vues mais aussi d'expériences différentes, je t'invite fortement à générer des discussions avec tous les dèv que tu trouveras.
+D'une manière générale, et vu qu'il s'agit de philosophies, de points de vue mais aussi d'expériences différentes, je t'invite fortement à générer des discussions avec tous les dèv que tu trouveras.
 Garde du recul, car l'immense majorité des dèv (100% ?) te diront avoir raison. La réalité opérationnelle amène souvent à d'autres choix.

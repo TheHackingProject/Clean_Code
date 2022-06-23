@@ -2,7 +2,7 @@
 Savoir utiliser RSpec avec Rails et comprendre certaines subtilités.
 
 ## 1. Introduction
-Tout au long de la semaine, tu as du le voir, nous n'avons quasiment pas abordé Rails. La raison c'est que si tu les comprends et que les fondamentaux du testing sont solides hors Rails, alors faire du testing en Rails n'est qu'une simple formalité.
+Tout au long de la semaine, tu as dû le voir, nous n'avons quasiment pas abordé Rails. La raison c'est que si tu les comprends et que les fondamentaux du testing sont solides hors Rails, alors faire du testing en Rails n'est qu'une simple formalité.
 L'inverse est faux : savoir tester une app Rails, ne t'apprendra pas à tester convenablement une gem, un scrapping pour une équipe growth, ou autre.
 
 Sachant cela, nous verrons les avantages qu'offre RSpec aux applications Rails, mais surtout : comment l'installer et s'y retrouver dans la configuration.
@@ -40,7 +40,7 @@ rails generate rspec:install
 ```
 
 ### 2.2. Unpacking et explications
-Une fois cette dernière commande exécuté on observe la création de 3 fichiers :
+Une fois cette dernière commande exécutée on observe la création de 3 fichiers :
 - .rspec
 - spec (le dossier)
 - spec/spec_helper.rb
@@ -72,10 +72,10 @@ Typiquement, tu peux rajouter et jouer avec tout ce qui t'es expliqué en résul
 Ce fichier est bien sûr versionné, et donc partagé avec toute ton équipe.
 
 **Alerte bonne astuce** : dans ta prochaine boîte, tu pourras créer un fichier `.rspec-local` sans oublier de l'ajouter au `.gitignore`.
-Ce fichier, permet d'override le fichier `.rspec`, mais donc uniquement sur ta machine. Utile quand tes collègues veulent impérativement une config que toi tu déteste personnellement (genre `--format NyanCatFormatter`).
+Ce fichier permet d'override le fichier `.rspec`, mais donc uniquement sur ta machine. Utile quand tes collègues veulent impérativement une config que toi tu détestes personnellement (genre `--format NyanCatFormatter`).
 
 ### 2.2.2 spec_helper.rb
-De la même manière que le `.rspec` le fichier `spec_helper.rb` permets quelques configurations par défaut. C'est là notamment qu'on pourra configurer RSpec pour utiliser l'option `--only-failures`.
+De la même manière que le `.rspec` le fichier `spec_helper.rb` permet quelques configurations par défaut. C'est là notamment qu'on pourra configurer RSpec pour utiliser l'option `--only-failures`.
 
 Par défaut, il n'y a pas beaucoup de configuration. On respecte le mantra de rails : "Convention over Configuration". Mais tu vois bien qu'il n'y a vraiment presque rien, et que finalement on s'éloigne de la philosophie de testing.
 
@@ -96,17 +96,17 @@ Ce fichier, est encore un fichier de config. Mais celui-ci est à part car il ne
 
 Dans certains projets, on le trouve carrément dans le fichier `.rspec` (mais je ne le recommande pas sans en parler à quelqu'un de sénior dans l'équipe).
 
-Ce fichier, `rails_helper.rb`, charge à la fois les gems rails et rspec-rails. Cela à l'air stupide dit comme ça, mais jusque là, RSpec aurait exécuté tes tests uniquement "The Ruby Way"... sans Rails. La raison ? C'est que de cette manière, il y a beaucoup moins de chose à charger, et tes tests vont plus vite à s'éxécuter.
+Ce fichier, `rails_helper.rb`, charge à la fois les gems rails et rspec-rails. Cela à l'air stupide dit comme ça, mais jusque là, RSpec aurait exécuté tes tests uniquement "The Ruby Way"... sans Rails. La raison ? C'est que de cette manière, il y a beaucoup moins de choses à charger, et tes tests vont plus vite à s'exécuter.
 
 Et, bien qu'à notre niveau 99.99% des fichiers `_spec.rb` auront besoin d'utiliser rails, il faut bien comprendre que si tu te retrouves à tester une librairie tierce dont tu souhaites qu'elle ne soit SURTOUT pas couplée avec rails, et bien pour t'en assurer, il faut que tu t'assures que Rails ne soit pas chargé. Et donc, que le rails_helper.rb ne soit pas require dans les fichiers de tests correspondants.
 
-Souvient toi bien de tout ça pour ton futur job, ou test technique en posant la question : quelle est votre utilisation et convention en interne sur le `rails_helper.rb` ?
+Souviens-toi bien de tout ça pour ton futur job, ou test technique en posant la question : quelle est votre utilisation et convention en interne sur le `rails_helper.rb` ?
 Tu sors une phrase comme ça : direct tu passes en mode God-Like en testing pendant un recrutement.
 (Véridique, je l'ai récemment testé pour toi).
 
 ## 2.3 Et maintenant ?
 
-Maintenant, chaque fois que tu feras un `rails generate`, RSpec créera pour toi les fichiers qui vont bien, et dans les bon dossiers. Pas besoin de se prendre la tête.
+Maintenant, chaque fois que tu feras un `rails generate`, RSpec créera pour toi les fichiers qui vont bien, et dans les bons dossiers. Pas besoin de se prendre la tête.
 
 Mieux : je t'encourage à le tester dès maintenant en faisant un scaffold :
 

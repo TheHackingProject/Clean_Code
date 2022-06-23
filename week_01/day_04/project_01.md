@@ -17,7 +17,7 @@ Bien sûr, ce projet, comme beaucoup de projets d'alumnis, n'a pas de tests. On 
 On va donc reprendre ce repo et en faire un modèle de testing pour les générations futures
 
 ### 2.1. Project.new()
-Mets toi en binôme,
+Mets-toi en binôme,
 Frok le repos. (oui j'ai bien dit fork et pas clone)
 Et ajoutez-y un outil de coverage, RSpec, FactoryBot.
 

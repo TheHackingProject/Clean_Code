@@ -8,9 +8,9 @@ Parce qu'il ne s'agit pas d'un ou d'une illuminée qui explique à tout le monde
 Spoiler : t'en fais partie.
 
 
-## 2.Qu'est ce que tu vas y trouver ?
-Tu vas globalement y trouver tout un tas de choses que tu désormais capable de comprendre. Mais surtout tu vas aussi y trouver les raisons, plus détaillées, de certains choix qui ont été fait pendant ce cursus.
-Egalement tu comprendras mieux d'où sort certains de mes choix philosophiques ou de convention.
+## 2.Qu'est-ce que tu vas y trouver ?
+Tu vas globalement y trouver tout un tas de choses que tu es désormais capable de comprendre. Mais surtout tu vas aussi y trouver les raisons, plus détaillées, de certains choix qui ont été faits pendant ce cursus.
+Egalement tu comprendras mieux d'où sortent certains de mes choix philosophiques ou de convention.
 Par exemple, tu verras pourquoi je ne me suis pas attardé sur les mocks 😉️.
 
 Happy reading.

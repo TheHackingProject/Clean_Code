@@ -3,7 +3,7 @@ Dans ce projet, tu vas utiliser tout le "vocabulaire" des matchers fournis dans 
 
 ## 1. Introduction
 Tu as passé un entretien avec une super boîte qui fait des sandwichs méga bueno (mais sans kinder).
-Tout se passe bien, et ton dernier entretien a eu lieu avec le CEO, un certains Bürgerroy, Forbs 30 under 30 🤘️ hell yeah !
+Tout se passe bien, et ton dernier entretien a eu lieu avec le CEO, un certain Bürgerroy, Forbs 30 under 30 🤘️ hell yeah !
 Pendant cet entretien il t'annonce fièrement que son équipe tech met un point d'honneur à avoir 100% de coverage sur son appli...
 
 Confiant dans tes capacités : il te recrute ! Félicitations. A toi les pépètes et la gloire  💰️💸️🌟️ !!  Mais maintenant il va falloir assurer.
@@ -64,13 +64,13 @@ Tips: oui... c'est pour ça que t'as le droit de toucher au Gemfile...
 ## 3. Rendu attendu
 On attend donc de toi un repo github identique à ce qui t'a été donné, mais avec des tests remaniés et qui passent.
 
-Attention, si tu t'amuses à changer le code legacy pour faciliter tes tests... saches que tu risques gros si ton lead tech ou ton CTO s'en aperçoivent...
+Attention, si tu t'amuses à changer le code legacy pour faciliter tes tests... sache que tu risques gros si ton lead tech ou ton CTO s'en aperçoivent...
 
 Ding dong... justement, en parlant d'eux, t'as une nouvelle notif sur ton slack. C'est ton lead qui t'écrit. Le CTO et ton Lead veulent faire une review de ton code demain matin 9h.
 
-Heureusement en tant que mouss/flibustier ou quelque marin que ce soit : la pression tu ne la subit pas, tu la bois pendant les apéros THP.
-Pas de panique donc, ce cours t'as suffisamment préparé.
+Heureusement en tant que mouss/flibustier ou quelque marin que ce soit : la pression tu ne la subis pas, tu la bois pendant les apéros THP.
+Pas de panique donc, ce cours t'a suffisamment préparé.
 Tu vas t'en sortir haut la main et avec le temps qu'il te reste tu organises l'apéro de mercredi easy peasy.
 
 ## 4. Points bonus:
-Si tu arrives à organiser les tests avec des describes et des contexts qui vont bien et qui rendent le code lisible et compréhensible, c'est sûr on te file directement une promotion !
+Si tu arrives à organiser les tests avec des describes et des contexts qui vont bien et qui rendent le code lisible et compréhensible, c'est sûr qu'on te file directement une promotion !

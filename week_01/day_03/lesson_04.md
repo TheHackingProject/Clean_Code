@@ -38,7 +38,7 @@ return "l'argument est un #{argument.class}"
 n'est pas testée.
 Il te dirait donc probablement quelque chose comme 50% de code coverage. Un cas est testé, pas l'autre.
 
-Les ligne
+Les lignes
 ```ruby
 def great_method(argument)
 ```
@@ -65,13 +65,13 @@ On va commencer par l'ajouter à notre Gemfile. On le mettra dans le groupe de t
 gem 'simplecov', require: false
 ```
 
-Ensuite, dans le `spec_helper.rb` on va ajouter ces quelques lignes directement tout en haut du fichier. Attention, tout ce qui sera au dessus de ces deux lignes, ne sera pas pris en compte par SimpleCov. Donc si tu require un autre fichier, tous les tests associés ne seront pas pris en compte.
+Ensuite, dans le `spec_helper.rb` on va ajouter ces quelques lignes directement tout en haut du fichier. Attention, tout ce qui sera au-dessus de ces deux lignes, ne sera pas pris en compte par SimpleCov. Donc si tu require un autre fichier, tous les tests associés ne seront pas pris en compte.
 ```ruby
 require 'simplecov'
 SimpleCov.start
 ```
 
-A partir de là, SimpleCov est opérationnel. Si tu lance la commande `bundle exec rspec` ou même simplement `rspec`, SimpleCov va créer un dossier `./coverage` dans lequel il y aura plein de fichiers.
+A partir de là, SimpleCov est opérationnel. Si tu lances la commande `bundle exec rspec` ou même simplement `rspec`, SimpleCov va créer un dossier `./coverage` dans lequel il y aura plein de fichiers.
 Bien sûr on ne va pas versionner ces fichiers, cela n'a pas de sens.
 Tu peux donc exécuter la commande suivante pour rajouter tout ce merdier au gitignore.
 
@@ -81,17 +81,17 @@ echo coverage >> .gitignore
 
 ### 3.2. Comprendre ce que ça raconte
 #### 3.2.1 Résultat du coverage
-Déjà quand tu lances RSpec, tu constate une chose : à la fin de l'éxécution, RSpec te rajoute l'indication `(xx%) covered`. C'est le coverage global de ton projet.
+Déjà quand tu lances RSpec, tu constates une chose : à la fin de l'éxécution, RSpec te rajoute l'indication `(xx%) covered`. C'est le coverage global de ton projet.
 
 D'une manière générale, tu peux aussi ouvrir le fichier `./coverage/index.html`.
-Dedans, tu y trouvera les infos suivantes :
-Le nombre de fichiers total concernés, le nombre de lignes pertinentes pour le test coverage (un commentaire n'est pas une ligne pertinente par exemple).
-Puis, dans un tableau, la liste des fichiers et leurs chemin d'accès et les ratio de testing.
+Dedans, tu y trouveras les infos suivantes :
+Le nombre total de fichiers  concernés, le nombre de lignes pertinentes pour le test coverage (un commentaire n'est pas une ligne pertinente par exemple).
+Puis, dans un tableau, la liste des fichiers et leurs chemins d'accès et les ratios de testing.
 Pour chaque ligne tu peux cliquer sur le nom d'un fichier pour en savoir plus.
 
 Lorsque tu fais ça, SimpleCov te montre directement les lignes couvertes (en vert) ou non couvertes (en rouge) par un test. C'est simple.
 
-#### 3.2.x Ca veut dire quoi en vrai un coverage.
+#### 3.2.x Ça veut dire quoi en vrai un coverage.
 Alors voilà une vraie question qu'il faut se poser.
 
 Reprenons notre méthode d'hier :
@@ -106,11 +106,11 @@ Je te propose en exercice de m'écrire deux test :
 - On s'attend à ce que `is_3('toto')` soit false
 - On s'attend à ce que `is_3(3)` soit true
 
-Je te conseille de bien prendre le temps de te créé un mini repo avec RSpec dedans, et de vraiment faire l'exercice. Cela t'entrainera pour le projet.
+Je te conseille de bien prendre le temps de te créer un mini repo avec RSpec dedans, et de vraiment faire l'exercice. Cela t'entrainera pour le projet.
 
 C'est bon ?
 
-maintenant fait fonctionner RSpec sur ce mini repo et regarde quel est ton coverage.
+maintenant fais fonctionner RSpec sur ce mini repo et regarde quel est ton coverage.
 Si tu as écrit uniquement les tests précédents tu dois avoir quelque chose de ce genre :
 ```ruby
 context 'covers it all' do
@@ -135,9 +135,9 @@ On a vu comment installer SimpleCov, un outil de coverage parmis tant d'autres.
 On a vu comment s'en servir et comment lire ses résultats.
 On a vu surtout que 100% de coverage ne veut pas dire que tu as bien pensé tous les cas. A l'inverse, à quoi bon faire 100% de coverage si c'est pour tester une méthode qui fait juste un print dans un log serveur ?
 
-Tu verras que cela dépendra des boîtes avec lesquelles tu travaille.
+Tu verras que cela dépendra des boîtes avec lesquelles tu travailles.
 
-En ce moment, la mode est à l'augementation du coverage à chaque PR, en visant le 70/80% in fine.
+En ce moment, la mode est à l'augmentation du coverage à chaque PR, en visant le 70/80% in fine.
 
 ## 5. Pour aller plus loin
 Maintenant, tu as assez de compétences pour rentrer dans le fameux débat : 100% de coverage or not 100% de coverage.
