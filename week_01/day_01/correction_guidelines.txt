@@ -1,0 +1,27 @@
+lors de l'éxécution de la commande `bundle exec rspec`, au moins 6 tests (sur 23) passent au vert
+
+Le code du dossier lib est strictement identique à celui donné dans l'énoncé.
+
+le matcher `eq` à été utilisé
+
+l'un de ces matchers à été utilisé : `be_truthy` ; `be_falsey` ; `be_true` ; `be_false`
+
+l'un de ces matchers à été utilisé : `equal` ; `be` ; `an_object_equal_to`
+
+lors de l'éxécution de la commande `bundle exec rspec`, au moins 15 tests (sur 23) passent au vert
+
+l'un de ces matchers à été utilisé : `include` ; `match` ; `pattern` ; `have_attributes`.
+
+le matcher `respond_to` a été utilisé.
+
+le matcher `raise_error` a été utilisé
+
+l'un de ces matchers à été utilisé : `contain_exactly` ; `start_with` ; `an_object_equal_to`
+
+lors de l'éxécution de la commande `bundle exec rspec`, tous les tests passent au vert
+
+le matcher `be_nil` a été utilisé.
+
+Les tests sont organisés avec des describes et des contexts
+
+L'organisation des tests rend le fichier spec plus lisible qu'avant.

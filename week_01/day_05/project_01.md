@@ -5,12 +5,13 @@ Parce que c'est une fonctionnalité qui génère du bug, peut planter des suites
 Introduction qui leur explique dans les grandes lignes le projet.
 
 ## 2. MickMackMoe
-Tu vas reprendre le TicTacToe que tu as testé l'autre jour. Mais maintenant tu vas
+Tu vas reprendre le TicTacToe que tu as testé l'autre jour. Mais maintenant tu vas simplement supprimer le fichier `lib/position.rb`. Oui tu as bien compris. L'app ne fonctionnera plus, et c'est le but. On va simuler une app qui n'est pas encore terminée.
+Et donc : il faudra mocker/stub/spy/double etc, les parties qui vont manquer.
 
 ## 3. Rendu attendu
- Ton repo avec le TicTacToe testé dans lequel tu as enlevé le fichier `lib/position.rb`.
- Les tests doivent toujours passer.
- Il doit y avoir 100% de coverage.
+Ton repo avec le TicTacToe testé dans lequel tu as enlevé le fichier `lib/position.rb`.
+Les tests doivent toujours passer.
+Il doit y avoir 100% de coverage.
 
 ## 4. T'en veux encore ?
 Le test, ce n'est pas une fin en soi. Cela permet d'améliorer sa code base, et de pouvoir refactor le moment voulu.

@@ -1,4 +1,4 @@
-# Success Story (validant) 🚀️
+# Success Story 🚀️ (validant)
 Depuis l'histoire de THP, nombre de projets se sont vus devenir de véritables startups.
 
 Te voici désormais confronté à un vrai projet en prod.
@@ -18,7 +18,7 @@ On va donc reprendre ce repo et en faire un modèle de testing pour les généra
 
 ### 2.1. Project.new()
 Mets-toi en binôme,
-Frok le repos. (oui j'ai bien dit fork et pas clone)
+Fork le repos. (oui j'ai bien dit fork et pas clone)
 Et ajoutez-y un outil de coverage, RSpec, FactoryBot.
 
 ### 2.2 Project.swag()
@@ -33,7 +33,6 @@ Pour la branche d'arrivée de la PR sélectionnez bien le repo initial, et non c
 Car de cette manière, un jour, le groupe d'alumni pourra décider (ou non) de merge votre travail en récompense.
 
 Félicitation, vous venez de faire officiellement de l'open source.
-
 
 ## 3. Rendu attendu
 Le lien vers une PR du projet final donné, dans laquelle il y a toutes les modifications qui amènent à 100% de coverage sur l'app.
