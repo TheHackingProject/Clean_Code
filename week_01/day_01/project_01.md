@@ -62,7 +62,7 @@ Il faut donc t'occuper également du Gemfile et faire en sorte que les tests tou
 Tips: oui... c'est pour ça que t'as le droit de toucher au Gemfile...
 
 ## 3. Rendu attendu
-On attend donc de toi un repo github identique à ce qui t'a été donné, mais avec des tests remaniés et qui passent.
+On attend donc de toi un repo github identique à ce qui t'a été donné, mais avec des tests remaniés et qui passent. Et comme tu veux briller, tu vas utiliser un maximum de matchers différent.
 
 Attention, si tu t'amuses à changer le code legacy pour faciliter tes tests... sache que tu risques gros si ton lead tech ou ton CTO s'en aperçoivent...
 
