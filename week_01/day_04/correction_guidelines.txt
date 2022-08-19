@@ -1,21 +1,11 @@
 Le projet a bien été fork et non clone.
-
 Le lien rendu est bien le lien vers une PR
-
 La PR pointe bien vers le repo d'origine et non celui de la personne que tu corriges.
-
 Dans la PR, le coverage annonce 60% du code couvert.
-
 Dans la PR, le coverage annonce 80% du code couvert.
-
 Dans la PR, le coverage annonce 100% du code couvert.
-
 Il y a une deuxième PR de proposée pour améliorer le code existant.
-
 Dans cette deuxième PR, le coverage annonce 80% du code couvert.
-
 Dans cette deuxième PR, le coverage annonce 100% du code couvert.
-
 Lors de l'éxécution de la commande `bundle exec rspec`, tous les tests passent au vert.
-
 La PR ne modifie pas le fondement des fonctionnalités existantes, seulement l'arrangement du code associé.

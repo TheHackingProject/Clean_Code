@@ -5,21 +5,21 @@ Dans cette ressource on va partir d'un fichier RSpec très simple et on va le di
 ## 1. Introduction
 En entrée, l'idée c'est qu'on soit d'accord sur le vocabulaire et les possibilités offertes par RSpec.
 
-Pas le temps de digérer qu'en guise de plat, tu vas manger du "matcher" à tire la rigo. Et attention, c'est sans sauce. Ce sera donc un peu sec à avaler, mais franchement c'est comme apprendre une langue étrangère. A un moment donné il faut accepter de se farcir du vocabulaire sinon comment pourrais-tu commander ta bière dans un bar de [Bischkek](https://g.page/metropubkg?share)(bar que, par ailleurs, je te recommande) ?
+Pas le temps de digérer qu'en guise de plat, tu vas manger du "matcher" à tire la rigo. Et attention, c'est sans sauce. Ce sera donc un peu sec à avaler, mais franchement c'est comme apprendre une langue étrangère. À un moment donné il faut accepter de se farcir du vocabulaire sinon comment pourrais-tu commander ta bière dans un bar de [Bischkek](https://g.page/metropubkg?share)(bar que, par ailleurs, je te recommande) ?
 Avec RSpec c'est pareil il faut bien un minimum de vocabulaire.
 
-Enfin, en dessert, on aura une partie bonus qui te révèlera d'où vient la magie d'RSpec.
+Enfin, en dessert, on aura une partie bonus qui te révèlera d'où vient la magie de RSpec.
 
 
 ## 2.Historique et contexte
-Cette ressource aura le fabuleux avantage que tu sauras quoi chercher dans google, et arrêtera de te gratter la tête pour comprendre les réponses de stackoverflow.
+Cette ressource aura le fabuleux avantage que tu sauras quoi chercher dans Google, et arrêtera de te gratter la tête pour comprendre les réponses de stackoverflow.
 RSpec a son propre vocabulaire. Il est un peu déroutant. Mais il faut s'y faire.
 
 ## 3. Nomenclatures
-Attention, ça va peut être te piquer un peu les yeux. Je vais te balancer un fichier RSpec bidon, mais avec l'intégralité des features possibles. L'idée n'est pas de comprendre ce qu'on teste dans ce fichier. Mais plutôt de s'arrêter sur chaque partie pour savoir :
+Attention, ça va peut-être te piquer un peu les yeux. Je vais te balancer un fichier RSpec bidon, mais avec l'intégralité des features possibles. L'idée n'est pas de comprendre ce qu'on teste dans ce fichier. Mais plutôt de s'arrêter sur chaque partie pour savoir :
 - Comment on appelle ce machin.
-- A quoi ça sert.
-- Est-ce que ça ce mange (nan je déconne... n'essaie pas de manger RSpec).
+- À quoi ça sert.
+- Est-ce que ça se mange (nan je déconne... n'essaie pas de manger RSpec).
 
 #### 3.1 Le corps
 
@@ -32,12 +32,12 @@ RSpec.describe TaClassQueTuVeuxTest do
 end
 ```
 
-Quand on veut tester un fichier `ta_class_que_tu_veux_test.rb`, l'idéal c'est de le faire dans le fichier `./spec/ta_class_que_tu_veux_test_spec.rb`. Ce n'est pas obligé, mais si tu nommes correctement les deux fichiers en symbiose, RSpec saura quel fichier Ruby il faut tester. Mâlin.
+Quand on veut tester un fichier `ta_class_que_tu_veux_test.rb`, l'idéal c'est de le faire dans le fichier `./spec/ta_class_que_tu_veux_test_spec.rb`. Ce n'est pas obligé, mais si tu nommes correctement les deux fichiers en symbiose, RSpec saura quel fichier Ruby il faut tester. Malin.
 
-Un fichier `*_spec.rb` comme tu l'auras remarqué c'est un fichier Ruby. Ainsi en début de fichier n'hésite pas à y mettre tous les require dont tu pourrais avoir besoin. Tu peux aussi y mettre du code, même si on ne le recommande pas dans les best practices 🙃.
+Un fichier `*_spec.rb` comme tu l'auras remarqué c'est un fichier Ruby. Ainsi, en début de fichier n'hésite pas à y mettre tous les require dont tu pourrais avoir besoin. Tu peux aussi y mettre du code, même si on ne le recommande pas dans les best practices 🙃.
 
 Ensuite commence véritablement le corps du fichier `RSPec.describe ...`.
-`RSpec` appel en fait la classe de RSpec contenu dans la ou les gems que tu as installé.
+`RSpec` appelle en fait la classe de RSpec contenu dans la ou les gems que tu as installé.
 `describe` est donc une méthode de la class qui prend un bloc.
 On pourrait tout à fait écrire le fichier comme suit :
 ```ruby
@@ -74,7 +74,7 @@ it 'does something' do
 end
 ```
 Ceci est ce que l'on appelle un "example".
-Ce nom n'est pas négociable. Il prendra tout son sens à la fin de la ressource, mais j'ai besoin que tu l'apprennes par-coeur pour le moment. Fais-moi confiance.
+Ce nom n'est pas négociable. Il prendra tout son sens à la fin de la ressource, mais j'ai besoin que tu l'apprennes par cœur pour le moment. Fais-moi confiance.
 
 
 #### 3.3 Example Groups
@@ -89,7 +89,7 @@ describe "Un groupe d'example" do
     # le corps de l'example
   end
 
-  # autant d'autre example que tu veux.
+  # autant d'autres examples que tu veux.
 end
 
 context "Une autre manière d'avoir un groupe d'example." do
@@ -149,17 +149,17 @@ Tu peux les mettre où tu veux dans le fichier, et ils ne seront pris en compte 
 `before(:something)` Bon tu te doutes bien que ce n'est pas something mais autre chose qu'il faut mettre.
 Voici les symboles autorisés par RSpec :
 - `:example` : avant (ou après) chaque example
-- `:context` : avant (ou après) chaque groupe d'example. Cela inclue bien sûr les `describe`
+- `:context` : avant (ou après) chaque groupe d'example. Cela inclut bien sûr les `describe`
 - `:suite` : avant (ou après) toute la suite de test, c'est à dire l'intégralité de tous les fichiers `*_spec.rb` exécutés par la commande `rspec`... mais ce hook n'est pris en compte uniquement que dans un seul cas bien particulier. Donc je te conseille de malheureusement l'oublier pour le moment.
 
-Attention aux anciennes versions d'RSpec pour lesquelles on trouve :
+Attention aux anciennes versions de RSpec pour lesquelles on trouve :
 - `:each` : remplacé aujourd'hui par`:example`.
 - `:all` : remplacé aujourd'hui par `:context`.
-Ces hooks fonctionnent encore juste pour permettre une rétrocompatibilité avec les anciennes versions d'RSpec. Comme tu le vois c'est assez trompeur et a été changé pour cette raison.
+Ces hooks fonctionnent encore juste pour permettre une rétrocompatibilité avec les anciennes versions de RSpec. Comme tu le vois c'est assez trompeur et a été changé pour cette raison.
 S'il te plait : ne t'en sers pas. Oublie-les.
 
 #### 3.5 What else ?
-Un café peut-être. Et oui car en substance, c'est tout ce qu'il y a à voir en termes de vocabulaire et autres dingueries. Note tout de même que si besoin, tu peux y ajouter du code ruby autant que tu veux et à n'importe quel endroit du fichier. Il sera exécuté par RSpec de manière logique :
+Un café peut-être. Et oui, car en substance, c'est tout ce qu'il y a à voir en termes de vocabulaire et autres dingueries. Note tout de même que si besoin, tu peux y ajouter du code ruby autant que tu veux et à n'importe quel endroit du fichier. Il sera exécuté par RSpec de manière logique :
 
 ```ruby
 RSpec.describe TaClassQueTuVeuxTest do
@@ -186,9 +186,9 @@ Pratique quand tu as besoin de DRY un peu tes tests avec un ensemble de code don
 
 ## 4. Points importants à retenir
 ```ruby
-require 'tes gems si besoins'
+require 'tes gems si besoin'
 
-# Eventuellement du code, mais c'est rare.
+# Éventuellement du code, mais c'est rare.
 
 RSpec.describe TaClasse, un_tag_optionnel: 'la valeur du tag, pas forcément en string d\'ailleurs' do
   before(:example) do # sera exécuté avant chaque example
@@ -200,7 +200,7 @@ RSpec.describe TaClasse, un_tag_optionnel: 'la valeur du tag, pas forcément en 
     # ce que tu veux.
   end
 
-  # Eventuellement du code pour t'aider à DRY tes tests (à mettre où tu veux)
+  # Éventuellement du code pour t'aider à DRY tes tests (à mettre où tu veux)
 
   describe 'la méthode que tu veux test' do # Un groupe d'examples
     context 'dans un cas particulier' do  # Un autre groupe d'examples imbriqué

@@ -2,16 +2,16 @@
 On va voir ici comment DRY son code en RSpec
 
 ## 1. Introduction
-En RSpec, comme en Ruby, on peut créer des variables. On va voir pourquoi RSpec à réinventé la roue, et surtout pourquoi ça va te sauver la vie.
+En RSpec, comme en Ruby, on peut créer des variables. On va voir pourquoi RSpec a réinventé la roue, et surtout pourquoi ça va te sauver la vie.
 
 ## 2.Historique et contexte
 On est d'accord que j'aurais beau écrire le meilleur cursus de la planète, le testing c'est quand même pas le truc le plus drôle. Quoique.
 
 Mais, l'idée c'est que ce soit le moins pénible possible, car à la moindre friction, tes collègues, ou toi même allez avoir envie de ne pas écrire ni modifier les tests.
 
-Et ça c'est pas ce que tu souhaites. Tu souhaites que ce soit fastoche à écrire, mais aussi fastoche à relire, corriger et modifier.
+Et ça, ce n’est pas ce que tu souhaites. Tu souhaites que ce soit fastoche à écrire, mais aussi fastoche à relire, corriger et modifier.
 
-Et donc imagine la situation suivante en rails. T'as un model User avec plein de méthodes différentes. Chaque méthode modifie les attributs du User.
+Et donc, imagine la situation suivante en rails. T'as un model User avec plein de méthodes différentes. Chaque méthode modifie les attributs du User.
 
 Tu pourrais très bien te dire que tu vas créer un User. Et à chaque test, vérifier que la modif est bien faite...
 Tu vas donc écrire un truc du genre :
@@ -30,8 +30,8 @@ Mais dans ce cas tu fais quoi pour la méthode 2 ? Tu recrées un nouveau User ?
 ### 2.1 Les pain points
 #### 2.1.1 Orga et ordre des tests
 Utiliser des variables "the Ruby way" a deux problèmes.
-Le premier c'est que comme tu t'en doutes, il faut gérer "A la main"™ les changements effectués, au risque d'avoir des tests qui pètent et de se retrouver à débuguer ses tests...
-On ne va quand même pas écrire des tests de tests non ?
+Le premier c'est que comme tu t'en doutes, il faut gérer "À la main"™ les changements effectués, au risque d'avoir des tests qui pètent et de se retrouver à débuguer ses tests...
+On ne va quand même pas écrire des tests de tests, non ?
 
 Autre problématique que cela engendre, en admettant que tu sois cador de l'organisation, cela impliquerait que tes tests ne passent plus QUE dans un certain ordre.
 
@@ -45,13 +45,13 @@ On n'en parlera pas à Guillaume, mais en vrai les tests, c'est mieux s'ils pass
   config.order = :random
 ```
 Cela permet de trouver les bugs provoqués par une suite de commande (requêtes HTTP par exemple) qui provoquerait un bug.
-Cette config fait qu'RSpec lancera donc les tests dans un ordre aléatoire, et te rendra à l'issue, qu'il y ai une failure ou non, un code d'ordre, nommé `--seed`. Si tu le veux tu pourras relancer ta suite de test exactement dans le même ordre en faisant :
+Cette config fait que RSpec lancera donc les tests dans un ordre aléatoire, et te rendra à l'issue, qu'il y ait une failure ou non, un code d'ordre, nommé `--seed`. Si tu le veux tu pourras relancer ta suite de test exactement dans le même ordre en faisant :
 ```console
 bundle exec rspec --seed xxx
 ```
-où xxx est le numéro du seed qu'RSpec t'avait donné.
+Où xxx est le numéro du seed que RSpec t'avait donné.
 
-C'est pas évident à comprendre ni à voir. Si comme moi tu es de nature visuelle, voici un exemple qui devrait te plaire :
+Ce n’est pas évident à comprendre ni à voir. Si comme moi tu es de nature visuelle, voici un exemple qui devrait te plaire :
 
 ```ruby
 class Article
@@ -101,17 +101,17 @@ Sauf qu'avant de te prendre pour James Bond, je ne vais t'enseigner un truc.
 
 Chaque fois que ton hook sera exécuté (donc à chaque test de ton fichier spec), un User est créé... et persistera en base de données.
 
-On s'en fout c'est la base de test en local me diras-tu... oui, sauf qu'au bout de 3 ans ta base elle fait 500Go si tu ne penses pas à la nettoyer, et tes requêtes deviennent de plus en plus longues...
+On s'en fout, c'est la base de test en local me diras-tu... oui, sauf qu'au bout de 3 ans ta base elle fait 500Go si tu ne penses pas à la nettoyer, et tes requêtes deviennent de plus en plus longues...
 Et finalement ta suite de test sur toute l'appli mettra 2h à se lancer et s'exécuter.
 
-Ça non plus : ce n'est pas ce que tu souhaites. Ni pour toi, ni pour tes collègues.
+Ça non plus : ce n'est pas ce que tu souhaites. Ni pour toi ni pour tes collègues.
 
-Bien sûr tu peux englober chaque test dans une [transaction](https://api.rubyonrails.org/v7.0.2.3/classes/ActiveRecord/Transactions/ClassMethods.html), clean ta base à l'issue de toute la suite de tests via une config utiliser une gem etc...
+Bien sûr tu peux englober chaque test dans une [transaction](https://api.rubyonrails.org/v7.0.2.3/classes/ActiveRecord/Transactions/ClassMethods.html), clean ta base à l'issue de toute la suite de tests via une config utiliser une gem, etc.
 
-Mais franchement je vais pas te mentir ya sacrément plus élégant et pratique.
+Mais franchement je ne vais pas te mentir, y'a sacrément plus élégant et pratique.
 
 ## 3. Let, Let! et Subject
-Pour palier ces précédentes problématiques, chez RSpec, ont été inventés des helpers : `let` et `let!`.
+Pour pallier ces précédentes problématiques, chez RSpec, ont été inventés des helpers : `let` et `let!`.
 
 On verra également comment se servir d'un truc génial : les subjects.
 
@@ -120,7 +120,7 @@ Le `let` c'est un peu la variable en RSpec. En fait c'est un helper qui va prend
 L'argument va servir à nommer la "variable", et le block va servir à stocker le "contenu" de cette "variable".
 Note bien que je mets des guillemets partout.
 
-C'est pas pour rien.
+Ce n’est pas pour rien.
 
 En fait `let` permet de mettre en cache le contenu du block pour le réutiliser à travers le même example.
 C'est une phrase violente pour dire que le contenu du block sera appelé à chaque example.
@@ -134,7 +134,7 @@ it 'calls the correct variable' do
 end
 ```
 
-Dans cet exemple, on créé une variable que l'on nomme `:start_value`. Pour l'utiliser on peut simplement écrire `start_value` sans les ":".
+Dans cet exemple, on crée une variable que l'on nomme `:start_value`. Pour l'utiliser, on peut simplement écrire `start_value` sans les ":".
 Sa valeur c'est `0`.
 
 Super.
@@ -183,7 +183,7 @@ Ici RSpec constate qu'on utilise `count`, il va donc chercher la "valeur" de cou
 Damned, pour ça il faut instancier la valeur de `start_value` puisque c'est la première fois qu'on l'utilise.
 Donc RSpec exécute `start_value = 0` (première ligne), puis `count` qui vaut `start_value += 1` soit 1.
 
-A ce stade donc, RSpec a lu 1 fois chacune des variables. Les a mis en cache pour le reste de l'exemple. Une des variables exécutant une modif sur l'autre variable, RSpec l'a fait aussi.
+À ce stade donc, RSpec a lu 1 fois chacune des variables. Les a mis en cache pour le reste de l'exemple. Une des variables exécutant une modif sur l'autre variable, RSpec l'a fait aussi.
 
 au deuxième appel de
 ```ruby
@@ -213,15 +213,15 @@ end
 
 Ce qui fait que c'est super pratique pour réinitialiser le contenu de tes variables entre chaque test, ou chaque example si tu préfères.
 
-Malin non ?
+Malin, non ?
 
-C'est également cette remise à zéro qui permet de ne pas persister en base de données tes objets rails que tu pourrais créer. Ainsi, entre ça et la mise en cache, tes tests continueront d'être optimisés, et rapide à exécuter. A toi les remerciements de tes collègues !
+C'est également cette remise à zéro qui permet de ne pas persister en base de données tes objets rails que tu pourrais créer. Ainsi, entre ça et la mise en cache, tes tests continueront d'être optimisés, et rapide à exécuter. À toi les remerciements de tes collègues !
 
 ### 3.2. Let!
-C'est la même chose que `let`. A l'exception près que `let`, sans le "!", est ce qu'on appelle Lazy-Loaded.
+C'est la même chose que `let`. À l'exception près que `let`, sans le "!", est ce qu'on appelle Lazy-Loaded.
 En gros RSpec ne s'en occupera QUE s'il le rencontre.
 
-C'est donc super pratique car par exemple :
+C'est donc super pratique, car par exemple :
 ```ruby
 let(:never_used) { User.new }
 
@@ -229,7 +229,7 @@ it 'does not call the correct variable' do
   # Random other code.
 end
 ```
-Dans ce cas, la "variable" `never_used` n'est jamais lu... donc elle n'est en fait jamais crée non plus... donc la base de donnée n'est jamais affectée par un `User.new`.
+Dans ce cas, la "variable" `never_used` n'est jamais lue... donc elle n'est en fait jamais créée non plus... donc la base de données n'est jamais affectée par un `User.new`.
 C'est donc juste une ligne de code en trop : sans aucun impact pour tes perfos ! Stylay !!!
 
 
@@ -242,14 +242,14 @@ it 'does not call the correct variable' do
 end
 ```
 
-là cette fois, quoiqu'il arrive, que tu t'en serves ou non : `never_used` est belle et bien utilisée, instanciée et mis en cache.
+Là cette fois, quoiqu'il arrive, que tu t'en serves ou non : `never_used` est belle et bien utilisée, instanciée et mise en cache.
 
 C'est la différence entre `let` et `let!`
 
-Bon il y a bien sûr d'autres subtilités. Mais pour être franc je les ai découvertes en écrivant ces lignes, et ce n'est vraiment pas primordial.
+Bon il y a bien sûr d'autres subtilités. Mais pour être franc, je les ai découvertes en écrivant ces lignes, et ce n'est vraiment pas primordial.
 
 
-### 3.3 Félicitation : c'est un très beau block !
+### 3.3 Félicitations : c'est un très beau block !
 Petit rappel si tu t'es endormi : on fait du ruby.
 
 Donc
@@ -266,17 +266,17 @@ Un autre outil super cool c'est le `subject`.
 On en a parlé dès le premier jour, le subject c'est exactement comme le sujet de la phrase `expect(subject).to be(something)`.
 "Le chien doit être poilu" => `expect(dog).to be_furry`
 
-Ok... mais RSpec a poussé le bouchon jusqu'à en faire un objet à part entière.
+OK... mais RSpec a poussé le bouchon jusqu'à en faire un objet à part entière.
 
 ### 3.3.1 Il y a toujours un subject....
-En vrai quand on écrit un `expect` il y a un sujet qui est implicite.
+En vrai, quand on écrit un `expect` il y a un sujet qui est implicite.
 C'est celui que l'on renseigne à la toute première ligne de son fichier `_spec.rb` :
 ```ruby
 RSpec.describe "Ici c'est le sujet" do
 ```
 Ici donc le sujet : c'est une chaîne de caractères.
 
-Ok mais ça t'avance à quoi ? à écrire un test de cette manière :
+OK, mais ça t'avance à quoi ? à écrire un test de cette manière :
 ```ruby
 it 'has a String class' do
   is_expected.to be_a(String)
@@ -314,13 +314,13 @@ Et tu as même un autre helper super stylay :
 expect(described_class.new.another_cool_method).to eq('Yeaaah')
 ```
 
-Ca, c'était le sujet implicite.
+Ça, c'était le sujet implicite.
 
 
 ### 3.3.2 ... mais des fois tu veux le changer.
-Et dans ces cas-là il y a le sujet explicite.
+Et dans ces cas-là, il y a le sujet explicite.
 
-Parce oui bien sûr RSpec te donne la possibilité de changer le subject comme tu veux.
+Parce que oui bien sûr RSpec te donne la possibilité de changer le subject comme tu veux.
 Démonstration :
 
 ```ruby
@@ -375,11 +375,11 @@ RSpec.describe 'Piège en haut subject' do
 end
 ```
 
-C'est pas bien méchant, mais si tu ne le sais pas tu peux chercher longtemps...
+Ce n’est pas bien méchant, mais si tu ne le sais pas tu peux chercher longtemps...
 
 
 ### 3.3.3 En vrai à quoi ça sert ?
-A DRY ton code pardi !
+À DRY ton code pardi !
 
 L'idée est toujours la même : il faut que ce soit le plus facile à lire, et le plus facile à maintenir.
 
@@ -398,7 +398,7 @@ On a vu que RSpec offre des helpers qui permettent d'éviter de créer des varia
 On a vu qu'il fallait faire attention au caching de ces helpers, mais que bien utiliser cela permet de vraiment séparer les responsabilités de chacun de tes tests.
 
 
-Ensuite, on a vu que, comme pour n'importe quelle phrase, RSpec considère qu'il y a toujours un `subject` pour accompagner le verb `expect`.
+Ensuite, on a vu que, comme pour n'importe quelle phrase, RSpec considère qu'il y a toujours un `subject` pour accompagner le verbe `expect`.
 Ce `subject` est directement la valeur de ce qu'on place dans le describe précédent la ligne `expect(...)`. Cela peut donc être nil ou une simple chaîne de caractères.
 
 Si on place une class en `describe` on peut profiter de helper stylay du style : `described_class` afin d'alléger la lecture de son code.
@@ -408,4 +408,4 @@ On peut aussi créer explicitement le subject en lui donnant un nom avec la comm
 ## 5. Pour aller plus loin
 [La doc de `let` et `let!`](https://relishapp.com/rspec/rspec-core/v/2-11/docs/helper-methods/let-and-let)
 Comparaison before vs let vs let!
-[La doc des `Subject`] (https://relishapp.com/rspec/rspec-core/v/3-10/docs/subject). Tu verras il y a certaines subtilités intéressantes.
+[La doc des `Subject`] (https://relishapp.com/rspec/rspec-core/v/3-10/docs/subject). Tu verras, il y a certaines subtilités intéressantes.

@@ -7,7 +7,7 @@ Les deux auteurs sont deux contributeurs majeurs des gems de RSPec. Ils savent d
 Alors ils ont écrit ce livre.
 
 Ce livre c'était mon seul espoir quand j'étais en PLS. Le lire m'a permis de découvrir tellement de choses.
-Si tu veux complèter ton cursus et connaitre l'intégralité des détails cachés du fonctionnement interne de RSpec, alors ce livre est pour toi.
+Si tu veux compléter ton cursus et connaitre l'intégralité des détails cachés du fonctionnement interne de RSpec, alors ce livre est pour toi.
 
 Je te recommande de l'acheter, car les auteurs ont vraiment fait un travail remarquable sur l'écriture du livre.
 
@@ -20,7 +20,7 @@ En gros tu vas y trouver en plus de tout ce qu'on a vu, les sujets que je n'ai p
 - Savoir créer ses propres matchers custom.
 - Savoir dry ces tests avec des helpers de la mort
 - Savoir utiliser des shared examples.
-- Comprendre comment sont conçus les classes de Mock de RSpec, et...
+- Comprendre comment sont conçues les classes de Mock de RSpec, et...
 - ... Savoir quand les utiliser.
 
-Toutes ces choses, tu es maintenant en mesure de les trouver petit à petit à travers la doc et tes besoins. Mais s'il y a urgence, n'hésite pas une seule seconde, et lit ce livre.
+Toutes ces choses, tu es maintenant en mesure de les trouver petit à petit à travers la doc et tes besoins. Mais s'il y a urgence, n'hésite pas une seule seconde, et lis ce livre.

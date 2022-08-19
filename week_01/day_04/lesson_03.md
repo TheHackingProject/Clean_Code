@@ -2,9 +2,9 @@
 On va voir ici brièvement comment "simuler" le "sign_in" d'un utilisateur.
 
 ## 1. Ya pas un helper ?
-Comme tu t'en doutes c'est le point faible de la gem rspec-rails. Aucun outil de sign_in par défaut n'est présent dans cette gem.
+Comme tu t'en doutes, c'est le point faible de la gem rspec-rails. Aucun outil de sign_in par défaut n'est présent dans cette gem.
 
-On va donc voir comment en faire un... A la main... et oui.
+On va donc voir comment en faire un... À la main... et oui.
 
 ## 2. Retour aux bases
 Reprenons la base de ce qu'on fait. On teste le comportement de l'application.
@@ -23,7 +23,7 @@ Et en fonction, on renvoie une 401, ou alors on passe dans le controller.
 
 Et bien on va brancher ça.
 
-Reprends ton scaffold de tout à l'heure, et créé le fichier `/spec/support/sign_in_helper.rb`.
+Reprends ton scaffold de tout à l'heure, et crée le fichier `/spec/support/sign_in_helper.rb`.
 
 Dedans on va définir un module dédié à cette opération :
 
@@ -60,22 +60,22 @@ module SignInHelper
 end
 ```
 
-Maintenant, dans tes spec, tu n'as plus qu'à `include SignInHelper` pour avoir accès à une méthode `sign_in` qui mettra en place le `current_user`.
+Maintenant, dans tes specs, tu n'as plus qu'à `include SignInHelper` pour avoir accès à une méthode `sign_in` qui mettra en place le `current_user`.
 
 
 **Astuce Démoniaque :**
 Tu ne vas quand même pas include ce module dans tous tes fichiers de specs de `type: :request` à la main non ?
 Non.
-A la place tu vas simplement ajouter ces quelques lignes à la fin de ton fichier `rails_helper.rb` :
+À la place tu vas simplement ajouter ces quelques lignes à la fin de ton fichier `rails_helper.rb` :
 ```ruby
 config.include SignInHelper, type: :request
 ```
 
 Voilà, comme ça ton module sera inclus systématiquement dès que tu mettras la metadata `type: :request` à ton fichier de specs.
 
-La classe non ?
+La classe, non ?
 
-En tout cas crois-moi : ça pourra te faire briller en test technique cette affaire.
+En tout cas, crois-moi : ça pourra te faire briller en test technique cette affaire.
 
 ### 3.2. La version Devise
 Et oui, tu t'en doutais, ce n'est pas vers RSpec qu'il fallait se tourner, mais bien vers Devise. Car ce sont eux qui ont pensé à nous offrir les méthodes de `sign_in`.
@@ -86,7 +86,7 @@ Et bien ce n'est pas plus difficile qu'un :
 config.include Devise::Test::IntegrationHelpers, type: :request
 ```
 
-dans ton `rails_helper.rb`.
+Dans ton `rails_helper.rb`.
 
 Voilà c'est fini, merci qui ?
 Merci Devise.

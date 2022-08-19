@@ -2,10 +2,10 @@
 Savoir utiliser RSpec avec Rails et comprendre certaines subtilités.
 
 ## 1. Introduction
-Tout au long de la semaine, tu as dû le voir, nous n'avons quasiment pas abordé Rails. La raison c'est que si tu les comprends et que les fondamentaux du testing sont solides hors Rails, alors faire du testing en Rails n'est qu'une simple formalité.
-L'inverse est faux : savoir tester une app Rails, ne t'apprendra pas à tester convenablement une gem, un scrapping pour une équipe growth, ou autre.
+Tout au long de la semaine, tu as dû le voir, nous n'avons quasiment pas abordé Rails. La raison est que si tu les comprends et que les fondamentaux du testing sont solides hors Rails, alors faire du testing en Rails n'est qu'une simple formalité.
+L'inverse est faux : savoir tester une app Rails ne t'apprendra pas à tester convenablement une gem, un scrapping pour une équipe growth, ou autre.
 
-Sachant cela, nous verrons les avantages qu'offre RSpec aux applications Rails, mais surtout : comment l'installer et s'y retrouver dans la configuration.
+Sachant cela, nous verrons les avantages qu'offre RSpec aux applications Rails, mais surtout : comment l'installer et s'y retrouver dans la configuration ?
 
 ## 2. La gem [rspec-rails](https://relishapp.com/rspec/rspec-rails/docs)
 
@@ -14,7 +14,7 @@ Pour utiliser RSpec dans son app rails, rien de plus simple que de mettre :
 ```ruby
 gem 'rspec-rails', '~> 5.0.0'
 ```
-dans son Gemfile.
+Dans son Gemfile.
 Bien sûr on prendra soin de glisser cette gem au bon endroit :
 ```ruby
 group :development, :test do
@@ -40,7 +40,7 @@ rails generate rspec:install
 ```
 
 ### 2.2. Unpacking et explications
-Une fois cette dernière commande exécutée on observe la création de 3 fichiers :
+Une fois cette dernière commande exécutée, on observe la création de 3 fichiers :
 - .rspec
 - spec (le dossier)
 - spec/spec_helper.rb
@@ -67,7 +67,7 @@ Tu peux rajouter d'autres options en rajoutant d'autres lignes dans ce fichier. 
 --format documentation
 ```
 
-Typiquement, tu peux rajouter et jouer avec tout ce qui t'es expliqué en résultat de la commande `rspec --help`.
+Typiquement, tu peux rajouter et jouer avec tout ce qui t'est expliqué en résultat de la commande `rspec --help`.
 
 Ce fichier est bien sûr versionné, et donc partagé avec toute ton équipe.
 
@@ -89,10 +89,10 @@ Il y a même toute une section qui est commentée :
 =end
 ```
 
-En fait, clairement, tu peux venir faire ton marché dans ces lignes de configurations. Notamment j'attire ton attention sur les fabuleusement pratiques ligne 57 à 60 de ce fichier.
+En fait, clairement, tu peux venir faire ton marché dans ces lignes de configurations. Notamment j'attire ton attention sur les fabuleusement pratiques lignes 57 à 60 de ce fichier.
 
 ### 2.2.3 rails_helper.rb
-Ce fichier, est encore un fichier de config. Mais celui-ci est à part car il ne sera pas automatiquement require. Il faudra le require manuellement partout où tu en auras besoin.
+Ce fichier est encore un fichier de config. Mais celui-ci est à part, car il ne sera pas automatiquement require. Il faudra le require manuellement partout où tu en auras besoin.
 
 Dans certains projets, on le trouve carrément dans le fichier `.rspec` (mais je ne le recommande pas sans en parler à quelqu'un de sénior dans l'équipe).
 

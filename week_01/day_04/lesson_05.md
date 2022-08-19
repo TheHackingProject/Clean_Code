@@ -5,20 +5,20 @@ Oui j'ai bien cherché un titre sympa pour cette ultime ressource. Mais faudra q
 On va voir ici pourquoi c'est quasi indispensable pour les tests d'applis rails.
 
 ## 2. FactoryBot Kezako ?
-Avant cette gem s'appelait FactoryGirl. Pour des raisons évidente, les créateurs ont renommé cette gem. Ne sois donc pas étonné si tu vois mentionner ce nom dans les posts Stackoverflow qui datent.
+Avant cette gem s'appelait FactoryGirl. Pour des raisons évidentes, les créateurs ont renommé cette gem. Ne sois donc pas étonné si tu vois mentionner ce nom dans les posts Stackoverflow qui datent.
 
-Concretement, FactoryBot est une gem qui va te permettre de créer des objets de ta base de données, comme un `user` par exemple, avec tous ses attributs nécessaires, simplement avec un pauvre `create(:user)`. Et ce, où tu veux dans tes tests.
+Concrètement, FactoryBot est une gem qui va te permettre de créer des objets de ta base de données, comme un `user` par exemple, avec tous ses attributs nécessaires, simplement avec un pauvre `create(:user)`. Et ce, où tu veux dans tes tests.
 
-Cette gem est véritablement puissante, et il y a deux trois choses que tu dois connaitre et comprendre avant de pouvoir te plonger dans la doc.
+Cette gem est véritablement puissante, et il y a deux ou trois choses que tu dois connaitre et comprendre avant de pouvoir te plonger dans la doc.
 
 ## 3. Les Fixtures
 RSpec prévoit l'utilisation de ce qui s'appelle des fixtures. Les fixtures sont des fichiers qui permettent de créer les objets usuels de votre base de données.
 Il se trouve que FactoryBot est une gem qui permet de créer automatiquement les fixtures pour chacun de vos objets en base.
 
 ### 3.1. Installation
-En fait il existe deux gems. Une gem pour les codes rubys en tout genre : factory : `gem install factory_bot`.
+En fait il existe deux gems. Une gem pour les codes ruby en tout genre : factory : `gem install factory_bot`.
 
-Nous on va se préoccuper d'apprendre à se servir de FactoryBot directement dans une app rails, comme c'est le plus souvent le cas dans la vie sauvage.
+Nous, on va se préoccuper d'apprendre à se servir de FactoryBot directement dans une app rails, comme c'est le plus souvent le cas dans la vie sauvage.
 
 On va donc placer la gem dans les group `:development` et `:test` de notre Gemfile :
 
@@ -29,18 +29,18 @@ end
 ```
 Un petit `bundle install` bien sûr.
 
-Ensuite on a besoin de dire à RSpec que lorsqu'il créé un objet il pourra le faire en se servant de FactoryBot.
-Pour cela, [la doc de configuration](https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md#configure-your-test-suite) de FactoryBot nous indique qu'il faut placer ces lignes quelque part dans la configuration de RSpec :
+Ensuite on a besoin de dire à RSpec que lorsqu'il crée un objet il pourra le faire en se servant de FactoryBot.
+Pour cela [la doc de configuration](https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md#configure-your-test-suite) de FactoryBot nous indique qu'il faut placer ces lignes quelque part dans la configuration de RSpec :
 ```ruby
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 end
 ```
 
-Rien de plus simple tu vas donc juste rajouter la ligne `config.include #...` dans ton `rails_helper.rb`, et HOP ! Le tour est joué.
+Rien de plus simple, tu vas donc juste rajouter la ligne `config.include #...` dans ton `rails_helper.rb`, et HOP ! Le tour est joué.
 
 ### 3.2. Mise en place
-Dès cet instant, chaque fois que tu changeras quelque chose dans tes models par la commande `rails generate` (model ou migration), une factorie sera créée où modifiée dans le dossier `spec/factories/`.
+Dès cet instant, chaque fois que tu changeras quelque chose dans tes models par la commande `rails generate` (model ou migration), une factorie sera créée ou modifiée dans le dossier `spec/factories/`.
 
 Tu peux par exemple tester en faisant un `rails generate scaffold Article name:string title:string content:text`.
 Tu verras qu'un fichier `/spec/factories/articles.rb` (note l'utilisation du pluriel dans le nom du fichier) est créé avec comme contenu :
@@ -74,10 +74,10 @@ end
 
 ### 3.3 Utilisation
 #### 3.3.1 Dans RSpec
-Grâce à la ligne de configuration que tu as rajoutée dans ton `rails_helper.rb`, FactoryBot est directement inclu dans tes specs. Et partout où tu écriras `create(:article)` ou `create(:post)` tu auras un objet Article ou Post avec les attributs de ta factory.
+Grâce à la ligne de configuration que tu as rajoutée dans ton `rails_helper.rb`, FactoryBot est directement incluse dans tes specs. Et partout où tu écriras `create(:article)` ou `create(:post)` tu auras un objet Article ou Post avec les attributs de ta factory.
 
 **Explication :**
-`create(:post)` va aller chercher la factory du model `Post`. A savoir le fichier `spec/factories/posts.rb` contenant
+`create(:post)` va aller chercher la factory du model `Post`. À savoir le fichier `spec/factories/posts.rb` contenant
 ```ruby
 FactoryBot.define do
   factory :post do
@@ -107,7 +107,7 @@ Et maintenant tu peux directement faire un petit
 ```console
 FactoryBot.create(:post)
 ```
-pour avoir un post tout neuf avec les attributs tous initialisés à `"MyString"`.
+Pour avoir un post tout neuf avec les attributs tous initialisés à `"MyString"`.
 
 Avoue : t'as passé combien de temps ces derniers mois à créer des objets bien relous à la main ? Genre ton projet final où tu avais un model qui avait 15 attributs de l'enfer, tous obligatoires. Que quand tu voulais tester tu étais obligé de TOUS LES RENSEIGNER....
 
@@ -131,12 +131,12 @@ Et tu peux le faire pour n'importe quel attribut. Cela remplacera automatiquemen
 ##### 3.3.3.2 create list
 On est d'accord, quand tu as besoin de 15 posts différents tu ne vas pas encore t'embêter avec une boucle hein ?
 Non
-A la place tu feras ça :
+À la place tu feras ça :
 
 ```ruby
 create_list(:post, 15)
 ```
-Et voilà, 15 posts tout neufs, tous avec les même valeurs dedans.
+Et voilà, 15 posts tout neufs, tous avec les mêmes valeurs dedans.
 
 Tu préfères d'autres valeurs ? Pas de soucis :
 ```ruby
@@ -162,7 +162,7 @@ Il n'est pas nécessaire de lire les lignes qui suivent pour s'en sortir.
 Néanmoins, en cas de base de données un peu bizarres, ou de projets complexes ou que sais-je encore, ce qui suit pourra t'être utile.
 
 ### 4.1 Les limitations précédentes.
-Tu le reconnais, un content qui a toujours 'MyString' en valeure c'est pas sexy.
+Tu le reconnais, un content qui a toujours 'MyString' en valeur c'est pas sexy.
 Et on ne va pas réécrire systématiquement le Faker dans la commande `create` non plus.
 
 Alors on peut directement modifier le fichier factory.
@@ -177,8 +177,8 @@ FactoryBot.define do
   end
 end
 ```
-Et hop comme par magie, pour chaque post créé par la factorie, le post aura des attributs différents.
-Et oui même en cas de `create_list` cette fois ci tes posts seront tous différents.
+Et hop, comme par magie, pour chaque post créé par la factorie, le post aura des attributs différents.
+Et oui, même en cas de `create_list` cette fois-ci tes posts seront tous différents.
 
 ### 4.2 La philo FactoryBot.
 Si tu parcours la documentation de FactoryBot, tu verras que la philo est assez simple et si tu y réfléchis, elle rejoint celle de RSpec.
@@ -195,11 +195,11 @@ end
 
 Ensuite tu auras sûrement, dans tes tests unitaires ou d'acceptance, besoin de tester ce qu'il se passe avec des valeurs dans les autres attributs. Dans ce cas tu pourras créer ton objet minimal avec `create(:post, name: 'le nom pour tester')` pour tester un post avec un `name` par exemple.
 
-La philo c'est ça : n'avoir QUE l'objet MINIMAL lorsqu'on utilise la factory. Tout ce qui n'est pas nécessaire à la création de l'objet, ne doit pas être tester. Sinon tu pourrais induire certains tests à passer au vert alors qu'ils ne devraient pas.
+La philo c'est ça : n'avoir QUE l'objet MINIMAL lorsqu'on utilise la factory. Tout ce qui n'est pas nécessaire à la création de l'objet, ne doit pas être testé. Sinon tu pourrais induire certains tests à passer au vert alors qu'ils ne devraient pas.
 
-En revanche dès qu'un attribut est obligatoire il faut que ta factory le créé au passage.
+En revanche dès qu'un attribut est obligatoire il faut que ta factory le crée au passage.
 
-Par exemple fais un petit scaffold User rapidement :
+Par exemple, fais un petit scaffold User rapidement :
 ```console
 rails g scaffold User name:string email:string
 ```
@@ -228,18 +228,18 @@ FactoryBot.define do
   end
 end
 ```
-Cette fois ci : le post est bien créé, et son user avec.
+Cette fois-ci : le post est bien créé, et son user avec.
 
-**L'oeil de Link 🗡️🛡️🏹️** aura sûrement remarqué que nous n'avons pas écrit `user: create(:user)` dans la factory.
+**L'œil de Link 🗡️🛡️🏹️** aura sûrement remarqué que nous n'avons pas écrit `user: create(:user)` dans la factory.
 Et c'est bien vu.
-Car en fait factory est conscient de ses capacités. Et donc sait que la factory nommée `user` existe. Et donc pas besoin de l'appeler par un `create`. La méthode `user` suffit.
+Car en fait factory est consciente de ses capacités. Et donc elle sait que la factory nommée `user` existe. Et donc pas besoin de l'appeler par un `create`. La méthode `user` suffit.
 
 Il y a d'autres manières de gérer ses associations. [Tu trouveras plus d'info ici](https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md#associations).
 
 Dans tous les cas, chaque post créé aura son user obligatoire. Tu auras donc ton objet minimal.
 
 
-"Oui mais si je veux très régulièrement plus que l'objet minimal ? Je vais me taper de le préciser à la main à chaque `create(...)` ??
+"Oui, mais si je veux très régulièrement plus que l'objet minimal ? Je vais me taper de le préciser à la main à chaque `create(...)` ??
 
 Non.
 
@@ -273,8 +273,8 @@ Mais `create(:post)` continuera de fonctionner et t'offrira l'objet minimal pour
 ### 4.4 Traits
 "Trait" signifie, en anglais, un trait de caractère.
 
-Et bien Factory y a pensé et a appelé ça des traits. Cela permet de modifier les valeurs des attributs de manière sensée. Et c'est très utile donc dans RSpec car on peut alors écrire :
-`create(:post, published)` au lieu de `create(:post, published: true)`. Ça n'a pas l'air comme ça. Mais c'est très utile et beaucoup plus lisible dans des cas plus complexe
+Et bien Factory y a pensé et a appelé ça des traits. Cela permet de modifier les valeurs des attributs de manière sensée. Et c'est très utile donc dans RSpec, car on peut alors écrire :
+`create(:post, published)` au lieu de `create(:post, published: true)`. Ça n'a pas l'air comme ça. Mais c'est très utile et beaucoup plus lisible dans des cas plus complexes
 
 Admettons que nous ayons un model Post ayant les attributs supplémentaires suivants :
 
@@ -314,7 +314,7 @@ FactoryBot.define do
 end
 ```
 
-Et ainsi, que l'on créé un `:post` ou un `:complete_post`, on pourra toujours faire varier en faisant par exemple :
+Et ainsi, que l'on crée un `:post` ou un `:complete_post`, on pourra toujours faire varier en faisant par exemple :
 
 ```ruby
 create(:post, :old, :unpublished)
@@ -347,7 +347,7 @@ Et bien les nested factories permettent de séparer les attributs à remplir (ob
 ### 4.5 sequence versus Faker
 Un petit point important et qui m'a fait suer, ainsi que de nombreuses personnes passées aspirants.
 
-Il arrive que tu veuilles l'unicité d'une valeure dans un model. Typiquement le model User prend un attribut `email` et on se doute bien qu'il sera unique.
+Il arrive que tu veuilles l'unicité d'une valeur dans un model. Typiquement le model User prend un attribut `email` et on se doute bien qu'il sera unique.
 
 ET là, beaucoup de gens utilisent FactoryBot et [sa method `sequence`](https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md#sequences).
 
@@ -363,7 +363,7 @@ end
 
 Cela aura pour effet d'incrémenter la valeur "n" à chaque fois qu'un user est créé par FactoryBot, et donc de le rendre l'email unique, au même titre qu'un id par exemple.
 
-Super ! non ? non....
+Super ! non ? Non....
 
 Parce qu'à l'instant où quelqu'un d'autre va devoir faire un `create(:user, email: 'toto@gmail.com')`, ta sequence est foutue, FactoryBot ne saura pas s'en sortir.
 
@@ -381,18 +381,18 @@ Ainsi tu auras une adresse mail du type `'unmotrandom@3468.com'` avec la suite `
 
 Bien sûr, si tu as peur que 10000 ne soit pas assez, tu peux augmenter la quantité en changeant le `number(4)` par `number(8)` par exemple.
 
-Voilà. Ça n'a l'air de rien comme ça. Mais crois moi, cela va te sauver la vie et celles de tes collègues un jour.
-Et en plus ça sauve des bébé pandas.
+Voilà. Ça n'a l'air de rien comme ça. Mais crois-moi, cela va te sauver la vie et celles de tes collègues un jour.
+Et en plus ça sauve des bébés pandas.
 
 ### 4.6 Quelques graines pour finir.
 Avant d'aller énerver l'[autre](https://tenor.com/boA2Q.gif), je voulais juste te parler du seed...
 Car oui : FactoryBot peut fonctionner avec le seed.
 
-Un peu plus pratique non ?
+Un peu plus pratique, non ?
 
 ## 5. Points importants à retenir
 La ressource en quelques points importants.
 
 ## 6. Pour aller plus loin
 - Si ce n'est pas déjà fait, tu peux t'attaquer au paragraphe sur les fonctionnalités poussées de FactoryBot.
-- Et si tu en veux d'autres, tu peux en fait simplement [lire la doc](https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md). Elle est vraiment bien faite et pleine de fonctionnalités très avancées notamment l'utilisation des callbacks du type `after_create` par exemple. Ceux-ci seront pratiques si tu te retrouves à tester un jour ce genre de choses.
+- Et si tu en veux d'autres, tu peux en fait simplement [lire la doc](https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md). Elle est vraiment bien faite et pleine de fonctionnalités très avancées, notamment l'utilisation des callbacks du type `after_create` par exemple. Ceux-ci seront pratiques si tu te retrouves à tester un jour ce genre de choses.

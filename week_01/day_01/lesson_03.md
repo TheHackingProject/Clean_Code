@@ -1,18 +1,18 @@
-# Les matchers. Non ça ne se boit pas.
+# Les matchers. Non, ça ne se boit pas.
 
 ## 1. Introduction
 Les matchers représentent le dernier chaînon qu'il te manque pour te lancer dans le projet du jour. Une fois que tu auras vu ça : à toi la gloire.
 
 ## 2.Historique et contexte
-Dans le décryptage d'RSpec, on a vu beaucoup de nouveaux mots.
-Pourtant si tu as l'oeil affûté, et bien déjà, fais attention de ne pas te couper, mais surtout tu auras remarqué que je n'ai pas abordé la partie la plus croustillante d'un fichier RSpec : le test en lui-même.
+Dans le décryptage de RSpec, on a vu beaucoup de nouveaux mots.
+Pourtant si tu as l'œil affûté, et bien déjà, fais attention de ne pas te couper, mais surtout tu auras remarqué que je n'ai pas abordé la partie la plus croustillante d'un fichier RSpec : le test en lui-même.
 
 Tu sais cette fameuse partie : `expect(truc).to machin(bidule)`.
 
 Et bien on aborde cela dès maintenant.
 
-## 3. Decryptage d'un test.
-Si dans ton parcours précédent tu as essayé malgré tout de faire des tests tu as dû remarquer que c'était très pénible. La raison principale c'est que si tu sais quoi tester (déjà tu fais partie du haut du panier), tu ne sais pas forcément comment l'écrire en RSpec...
+## 3. Décryptage d'un test.
+Si dans ton parcours précédent tu as essayé malgré tout de faire des tests, tu as dû remarquer que c'était très pénible. La raison principale c'est que si tu sais quoi tester (déjà tu fais partie du haut du panier), tu ne sais pas forcément comment l'écrire en RSpec...
 
 Exemple. Tu veux tester que la méthode suivante fonctionne correctement :
 ```ruby
@@ -27,27 +27,27 @@ Là tu te demandes : "D'accord, mais comment on écrit ça ?".
 
 Et 3h après t'es toujours en PLS sur stackoverflow a essayé de comprendre ce que raconte les gens...
 
-T'inquiète pas. C'est fini ça maintenant. Fini fini.
+Ne t'inquiète pas. C'est fini ça maintenant. Fini fini.
 
 ### 3.1. Décomposer le mouvement.
 Alors déjà faut bien comprendre ce qu'on regarde.
 
 Dans un example, il ne doit en général y avoir qu'un seul test. C'est comme ça. Tu peux en mettre plusieurs, mais la convention c'est : un example = un test.
 
-Mais dis-dont Jamy c'est quoi la différence entre une spec, un test et un example ?
-A première vue il n'y a pas de différence. Tous ces termes réfèrent à la même syntaxe de code. Mais chacun de ces trois termes a une connotation différente dans le monde du testing.
+Mais dis-donc Jamy, c'est quoi la différence entre une spec, un test et un example ?
+À première vue il n'y a pas de différence. Tous ces termes réfèrent à la même syntaxe de code. Mais chacun de ces trois termes a une connotation différente dans le monde du testing.
 
 Pour un bout de code donné :
 - Un test : valide qu'il fonctionne correctement
 - Une spec : (diminutif d'une spécificité), décrit le comportement souhaité de ce bout de code.
 - Un example : montre de quelle manière ce bout de code est censé être utilisé.
 
-La philosophie d'RSpec devient alors évidente : on spécifie les besoins en écrivant des fichiers de specs. Dans chaque fichier il y a des examples.
+La philosophie de RSpec devient alors évidente : on spécifie les besoins en écrivant des fichiers de specs. Dans chaque fichier il y a des examples.
 Mais pas de tests.
 
-Te prends pas trop la tête pour le moment. On verra comment utiliser cette philo demain.
+Ne te prends pas trop la tête pour le moment. On verra comment utiliser cette philo demain.
 
-Mais pour l'heure ce qu'il faut comprendre c'est qu'on écrit des specs (fichiers) qui contiennent des examples. En voici un pour l'exemple (désolé j'étais obligé de la faire à un moment celle-là) :
+Mais pour l'heure ce qu'il faut comprendre, c'est qu'on écrit des specs (fichiers) qui contiennent des examples. En voici un pour l'exemple (désolé j'étais obligé de la faire à un moment celle-là) :
 ```ruby
 it 'returns toto' do
   expect(ma_methode(un_argument)).to eq('toto')
@@ -61,7 +61,7 @@ Décomposons :
 ```ruby
 it 'returns toto' # ceci est un example
 ```
-Oui en soit `it` est une méthode. Cette méthode accepte un objet en premier argument (ici le string `'returns toto'`), puis un hash (on verra ça plus tard si tu as assez de bravoure en toi), et enfin un block.
+Oui en soi `it` est une méthode. Cette méthode accepte un objet en premier argument (ici le string `'returns toto'`), puis un hash (on verra ça plus tard si tu as assez de bravoure en toi), et enfin un block.
 
 On peut donc écrire indifféremment :
 ```ruby
@@ -80,12 +80,12 @@ La partie
 ```ruby
 expect(ma_methode(un_argument)).to
 ```
-est ce qu'on appel une `expectation`.
+Est-ce qu'on appelle une `expectation` ?
 C'est cet objet qui, conjointement avec `.to`, s'occupe de signaler le succès ou l'échec de l'example.
 C'est donc cet objet qui te largue un gros message d'erreur dans la tronche, ou une jolie couleur verte pleine d'espoir quand ça marche.
-On ne le manipule pas vraiment. Mais il faudra juste réfléchir à ce qu'on lui donne comme argument : ici `ma_methode(un_argument)`. Cet argument on l'appelle le **subject**.
+On ne le manipule pas vraiment. Mais il faudra juste réfléchir à ce qu'on lui donne comme argument : ici `ma_methode(un_argument)`. Cet argument, on l'appelle le **subject**.
 
-La partie bizarre c'est ce `.to`. C'est aussi une méthode, qui prend cette-fois ci l'argument `eq('toto')`. Cela fait partie de l'expectation.
+La partie bizarre c'est ce `.to`. C'est aussi une méthode, qui prend cette fois-ci l'argument `eq('toto')`. Cela fait partie de l'expectation.
 Note qu'il existe la méthode `.not_to` qui vérifiera qu'on n'obtient **PAS** quelque chose.
 On peut aussi écrire `.to_not` c'est la même chose, mais selon le cas ça fait plus propre.
 
@@ -97,13 +97,13 @@ it 'returns toto' do
   expect(ma_methode(un_argument)).to eq('toto')
 end
 ```
-le sujet est donc `ma_methode(un_argument)`. C'est l'argument (le subject) de la méthode (du verbe) `expect().to` (ou *'to expect'* pour les fans de shakespear).
+Le sujet est donc `ma_methode(un_argument)`. C'est l'argument (le subject) de la méthode (du verbe) `expect().to` (ou *'to expect'* pour les fans de shakespear).
 
 #### 3.1.3 les Matchers
 ```ruby
 eq('toto')
 ```
-est un matcher. C'est la partie responsable de comparer la valeur `'toto'` avec le contenu du `expect(...).to`. Cette méthode va simplement renvoyer un booléen true/false selon le cas.
+Est un matcher. C'est la partie responsable de comparer la valeur `'toto'` avec le contenu du `expect(...).to`. Cette méthode va simplement renvoyer un booléen true/false selon le cas.
 
 Et c'est cette partie qu'il faut connaître correctement. Il en existe de plein de sortes faisant plein de choses. Ils sont composables, chainables et quand on les maîtrise on devient un peu tout puissant.
 
@@ -127,7 +127,7 @@ Ici les matchers utilisés sont :
 - an_integer
 - be_within
 
-Le `of` ne peut s'utiliser que greffé à un autre matcher. c'est un cas un peu particulier. Il en existe d'autre assez pratique comme `and`, `or` etc...
+Le `of` ne peut s'utiliser que greffé à un autre matcher. C'est un cas un peu particulier. Il en existe d'autre assez pratique comme `and`, `or` etc...
 
 Le truc génial c'est qu'on peut même les créer si tu ne trouves pas ton bonheur.
 Je déconseille de le faire à ton niveau, mais sache que c'est possible.
@@ -135,11 +135,11 @@ Je déconseille de le faire à ton niveau, mais sache que c'est possible.
 ### 3.2. La cheat sheet de guedin !!
 Alors voilà, c'est simple.
 
-Maintenant tu connais toute la conjugaison et la syntaxe d'RSpec. Et j'en suis désolé d'avance, j'ai pourtant repoussé ce moment autant que possible. Mais c'est l'instant relou où il va falloir apprendre des trucs...
+Maintenant tu connais toute la conjugaison et la syntaxe de RSpec. Et j'en suis désolé d'avance, j'ai pourtant repoussé ce moment autant que possible. Mais c'est l'instant relou où il va falloir apprendre des trucs...
 
 Les matchers...
 
-Voici une liste non exhaustive mais qui pourra te sortir de beaucoup de situations :
+Voici une liste non exhaustive, mais qui pourra te sortir de beaucoup de situations :
 
 | Matchers | Alias | Renvoie true si... |
 |---|---|---|
@@ -174,16 +174,16 @@ Ils se comparent au block de code de l'expectation, et non à son argument (ou s
 On doit dans ce cas écrire cette syntaxe.
 
 ```ruby
-expect { some_code }.to block_matcher(some_other_code) # cette ligne ne fonctionne pas mais ça montre la syntaxe
+expect { some_code }.to block_matcher(some_other_code) # cette ligne ne fonctionne pas, mais ça montre la syntaxe
 ```
 
-Je vais pas te les faires bouffer de manière brutale ceux là, mais plutôt te montrer un exemple venant de Rails parce que c'est super pratique :
+Je ne vais pas te les faires bouffer de manière brutale ceux-là, mais plutôt te montrer un exemple venant de Rails parce que c'est super pratique :
 
 ```ruby
 expect { Article.new }.to change { Article, :count }.by(1)
 
 def create_three_articles
-  3.times { Article.create() } # on admet que ça créé 3 articles
+  3.times { Article.create() } # on admet que ça crée 3 articles
 end
 
 expect { create_three_articles }.to change { Article.count }.from(1).to(4) # on avait 1 article, maintenant on en a 3 de plus
@@ -191,11 +191,11 @@ expect { create_three_articles }.to change { Article.count }.from(1).to(4) # on 
 expect { create_three_articles }.to change { Article, :count }.by_at_least(2)
 # Article, :count ou Article.count les deux syntaxes sont correctes.
 
-expect { create_three_articles }.to not_change { User, :count }
+Expect { create_three_articles }.to not_change { User, :count }
 expect { create_three_articles }.not_to change { User, :count } # ces deux syntaxes sont rigoureusement équivalentes.
 ```
 
-Voilà, bien sûr il y a d'autres matchers basés sur les block, mais on en a déjà bien assez vu pour faire de toi une brute épaisse en RSpec.
+Voilà, bien sûr, il y a d'autres matchers basés sur les block, mais on en a déjà bien assez vu pour faire de toi une brute épaisse en RSpec.
 
 ## 4. Points importants à retenir
 On a décortiqué la dernière partie d'un fichier de spec : l'example.
@@ -205,7 +205,7 @@ On a vu que c'était composé d'un bloc contenant :
 - un subject
 - un, ou plusieurs matchers chainés entre eux.
 
-On a vu que si tu connais bien tes matchers, en fait il t'en suffit en général d'un seul pour briller dans ton équipe de dèv !
+On a vu que si tu connais bien tes matchers, en fait il t'en suffit en général d'un seul pour briller dans ton équipe de dév !
 
 Et on a également vu que le combo : `expectation(subject) matcher(valeur)` était en fait une simple comparaison sortant un booléen, interprété par l'expectation pour en faire un message d'erreur.
 

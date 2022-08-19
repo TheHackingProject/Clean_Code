@@ -1,17 +1,17 @@
 # Nouvelle Startup, nouvelle vie !
-A ton tour de décrire QUOI tester.
+À ton tour de décrire QUOI tester.
 
 ## 1. Introduction
 Fort de ton expérience accumulée chez Bürgerroy, tu t'es dit que tu ne pouvais pas rester dans une équipe aussi mal structurée.
-Tu es donc partie dans une startup super prometteuse mais encore très early stage, qui propose un jeu pour mobile dernier cri en pay-to-win : **"TTT Corp"**.
+Tu es donc partie dans une startup super prometteuse, mais encore très early stage, qui propose un jeu pour mobile dernier cri en pay-to-win : **"TTT Corp"**.
 
 Tes exploits chez Bürgerroy en termes de testing ont fait de toi une super star en RSpec. Ton job, c'est d'accompagner la CTO de TTT Corp dans la limitation de dettes technique.
-Le jeux n'en est qu'au MVP, mais il est validé par les stakeholders, et tout le monde mise dessus. On veut que TTT Corp devienne la nouvelle Licorne française 🦄️🤘️!
+Le jeu n'en est qu'au MVP, mais il est validé par les stakeholders, et tout le monde mis dessus. On veut que TTT Corp devienne la nouvelle Licorne française 🦄️🤘️!
 Avant d'aller plus loin : il faut avoir une suite de tests afin de pouvoir itérer sereinement sans la crainte de tout péter.
 
 Bref. Gros challenge, mais après Bürgerroy, plus rien ne te fait peur.
 
-Surprise, ta CTO à fait THP en 2018.
+Surprise, ta CTO a fait THP en 2018.
 Et tu te souviens de ce bon vieux TicTacToe des familles qui t'avait fait suer autant que si t'avais fait soulever des haltères dans un sauna ?
 Eh ben c'est celui que ta CTO à fait pendant son cursus.
 
@@ -33,15 +33,15 @@ L'idée est d'aller parcourir chaque fichier `.rb` et d'écrire les tests unitai
 
 
 ## 3. Rendu attendu
-Non non non. Tu ne feras pas de code aujourd'hui. C'est bien trop important. Dans le monde professionnel on prend le temps. On veut faire les choses bien.
+Non non non. Tu ne feras pas de code aujourd'hui. C'est bien trop important. Dans le monde professionnel, on prend le temps. On veut faire les choses bien.
 
 (Pour le coup ce n'est pas une blague, je suis sérieux).
 
 Donc on va faire une réunion. On attend de toi que tu décrives d'abord ta stratégie de tests.
-Le jeu tu le connais.
-RSpec : on t'as recruté pour.
+Le jeu, tu le connais.
+RSpec : on t'a recruté pour.
 
-Maintenant on veut savoir CE QUI DEVRA ÊTRE TESTÉ : comment et pourquoi.
+Maintenant on veut savoir CE QUI DEVRA ÊTRE TESTÉ : comment et pourquoi ?
 
 Pour préparer cette réunion avec ta CTO, tu vas créer un repo contenant un simple fichier markdown avec ce format
 
@@ -70,10 +70,10 @@ On te laisse le soin de voir et de décrire les cas qu'il est nécessaire de tes
 
 Pour cette réunion on t'attend particulièrement sur les points suivants :
 - les points critiques, c'est-à-dire ce qu'il faut impérativement tester.
-- les points importants mais moins graves, i.e les choses qu'il faudrait tester si on était parano.
+- les points importants, mais moins graves, i.e les choses qu'il faudrait tester si on était parano.
 - les points qu'il ne fallait pas tester. En effet, il y a des méthodes, ou parties de méthodes ou des use cases qu'il n'est pas nécessaire de tester. On vérifiera demain que tu ne tombes pas non plus dans une frénésie de tests inutiles ou redondants.
 
-N'oublie pas, dans une startup : Cash is King. Le temps jouera contre toi. Donc ne sois pas trop gourmand en quantité de tests. Privilégie la qualité. Ou alors aies de bons arguments.
+N'oublie pas, dans une startup : Cash is King. Le temps jouera contre toi. Donc ne sois pas trop gourmand en quantité de tests. Privilégie la qualité. Ou alors, aie de bons arguments.
 
 La réunion est demain matin.
 

@@ -33,7 +33,7 @@ Ici je vais juste t'apprendre à t'en servir dans un cas ultra particulier.
 
 ### 2.2. Spy
 Dans le cas qui nous intéresse, on va utiliser un spy en fait.
-Un spy est un espion. On prend donc un objet qui existe, on lui place un trackeur dessus. Et dès que cet objet reçoit une méthode on l'intercepte et on remplace la valeur de réponse par la notre.
+Un spy est un espion. On prend donc un objet qui existe, on lui place un traqueur dessus. Et dès que cet objet reçoit une méthode on l'intercepte et on remplace la valeur de réponse par la nôtre.
 
 T'as rien pigé ?
 
@@ -106,7 +106,7 @@ En gros RSpec considère que tu testes aussi ce qu'il se passe sur `$stdin`.
 ## 3. Points importants à retenir
 Pour tester une sortie dans le terminal on peut utiliser le matcher `output('quelque chose').to_stdout`
 
-Pour simuler une entrée dans le terminal, on créé juste avant le `expect`, un spy qui va remplacer l'interaction avec le terminal : `allow($stdin).to receive(:gets).and_return('X')`
+Pour simuler une entrée dans le terminal, on crée juste avant le `expect`, un spy qui va remplacer l'interaction avec le terminal : `allow($stdin).to receive(:gets).and_return('X')`
 
 ## 4. Pour aller plus loin
 Si vraiment tu as l'âme masochiste, je ne te jugerai pas, et tu peux te lancer dans [cette doc](https://relishapp.com/rspec/rspec-mocks/docs/basics/test-doubles).

@@ -35,7 +35,7 @@ Un bon code coverage te dirais que la ligne 5 de ton code :
 ```ruby
 return "l'argument est un #{argument.class}"
 ```
-n'est pas testée.
+N'est pas testée.
 Il te dirait donc probablement quelque chose comme 50% de code coverage. Un cas est testé, pas l'autre.
 
 Les lignes
@@ -46,11 +46,11 @@ ou encore
 ```ruby
 end
 ```
-n'ont pas à être testé par nature. Cela parait évident mais il faut le dire.
+N'ont pas à être testé par nature. Cela parait évident, mais il faut le dire.
 
 Voilà comment fonctionne grosso modo un outil de coverage.
 
-Il en existe plein : SonarQube, Track Ruby, SonarCloud, Codecov. Il existe même des [extensions VS Code](https://marketplace.visualstudio.com/items?itemName=markis.code-coverage) qui te souligne les parties du code qui ne sont pas couvertes par des test.
+Il en existe plein : SonarQube, Track Ruby, SonarCloud, Codecov. Il existe même des [extensions VS Code](https://marketplace.visualstudio.com/items?itemName=markis.code-coverage) qui te souligne les parties du code qui ne sont pas couvertes par des tests.
 C'est un peu comme les IDE, chacun sa paroisse... Pour ce cursus on utilisera SimpleCov.
 
 Pourquoi ?
@@ -65,13 +65,13 @@ On va commencer par l'ajouter à notre Gemfile. On le mettra dans le groupe de t
 gem 'simplecov', require: false
 ```
 
-Ensuite, dans le `spec_helper.rb` on va ajouter ces quelques lignes directement tout en haut du fichier. Attention, tout ce qui sera au-dessus de ces deux lignes, ne sera pas pris en compte par SimpleCov. Donc si tu require un autre fichier, tous les tests associés ne seront pas pris en compte.
+Ensuite, dans le `spec_helper.rb` on va ajouter ces quelques lignes directement tout en haut du fichier. Attention, tout ce qui sera au-dessus de ces deux lignes ne sera pas pris en compte par SimpleCov. Donc si tu require un autre fichier, tous les tests associés ne seront pas pris en compte.
 ```ruby
 require 'simplecov'
 SimpleCov.start
 ```
 
-A partir de là, SimpleCov est opérationnel. Si tu lances la commande `bundle exec rspec` ou même simplement `rspec`, SimpleCov va créer un dossier `./coverage` dans lequel il y aura plein de fichiers.
+À partir de là, SimpleCov est opérationnel. Si tu lances la commande `bundle exec rspec` ou même simplement `rspec`, SimpleCov va créer un dossier `./coverage` dans lequel il y aura plein de fichiers.
 Bien sûr on ne va pas versionner ces fichiers, cela n'a pas de sens.
 Tu peux donc exécuter la commande suivante pour rajouter tout ce merdier au gitignore.
 
@@ -81,7 +81,7 @@ echo coverage >> .gitignore
 
 ### 3.2. Comprendre ce que ça raconte
 #### 3.2.1 Résultat du coverage
-Déjà quand tu lances RSpec, tu constates une chose : à la fin de l'éxécution, RSpec te rajoute l'indication `(xx%) covered`. C'est le coverage global de ton projet.
+Déjà quand tu lances RSpec, tu constates une chose : à la fin de l'exécution, RSpec te rajoute l'indication `(xx%) covered`. C'est le coverage global de ton projet.
 
 D'une manière générale, tu peux aussi ouvrir le fichier `./coverage/index.html`.
 Dedans, tu y trouveras les infos suivantes :
@@ -91,7 +91,7 @@ Pour chaque ligne tu peux cliquer sur le nom d'un fichier pour en savoir plus.
 
 Lorsque tu fais ça, SimpleCov te montre directement les lignes couvertes (en vert) ou non couvertes (en rouge) par un test. C'est simple.
 
-#### 3.2.x Ça veut dire quoi en vrai un coverage.
+#### 3.2.x Ça veut dire quoi en vrai un coverage ?
 Alors voilà une vraie question qu'il faut se poser.
 
 Reprenons notre méthode d'hier :
@@ -102,7 +102,7 @@ def is_3?(number)
 end
 ```
 
-Je te propose en exercice de m'écrire deux test :
+Je te propose en exercice de m'écrire deux tests :
 - On s'attend à ce que `is_3('toto')` soit false
 - On s'attend à ce que `is_3(3)` soit true
 
@@ -110,8 +110,8 @@ Je te conseille de bien prendre le temps de te créer un mini repo avec RSpec de
 
 C'est bon ?
 
-maintenant fais fonctionner RSpec sur ce mini repo et regarde quel est ton coverage.
-Si tu as écrit uniquement les tests précédents tu dois avoir quelque chose de ce genre :
+Maintenant, fais fonctionner RSpec sur ce mini repo et regarde quel est ton coverage.
+Si tu as écrit uniquement les tests précédents, tu dois avoir quelque chose de ce genre :
 ```ruby
 context 'covers it all' do
   it 'returns false' do
@@ -122,7 +122,7 @@ context 'covers it all' do
   end
 end
 ```
-et un coverage de 100%...
+Et un coverage de 100%...
 
 
 Sauf qu'il te manque un cas.
@@ -131,9 +131,9 @@ Celui où la méthode renvoie `nil`.
 Ainsi c'est la conclusion de cette ressource. Attention : 100% de Coverage ne veut pas dire que tes tests couvrent tous les cas d'usage de ta méthode ou de ta classe.
 
 ## 4. Points importants à retenir
-On a vu comment installer SimpleCov, un outil de coverage parmis tant d'autres.
+On a vu comment installer SimpleCov, un outil de coverage parmi tant d'autres.
 On a vu comment s'en servir et comment lire ses résultats.
-On a vu surtout que 100% de coverage ne veut pas dire que tu as bien pensé tous les cas. A l'inverse, à quoi bon faire 100% de coverage si c'est pour tester une méthode qui fait juste un print dans un log serveur ?
+On a vu surtout que 100% de coverage ne veut pas dire que tu as bien pensé tous les cas. À l'inverse, à quoi bon faire 100% de coverage si c'est pour tester une méthode qui fait juste un print dans un log serveur ?
 
 Tu verras que cela dépendra des boîtes avec lesquelles tu travailles.
 

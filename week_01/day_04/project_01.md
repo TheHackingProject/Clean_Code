@@ -4,10 +4,10 @@ Depuis l'histoire de THP, nombre de projets se sont vus devenir de véritables s
 ## 1. Introduction
 Depuis que tu es devenu le sauveur des levées de fond chez TTT Corp, la boîte est devenue une licorne 🦄️ et toi, tu profites de tes BSPCE, et tu sirotes des cocktails dans ton nouveau job de Lead Testing au 3/5ème avec congés illimités.
 
-Tu as donc du temps pour des sides projects en tout genre, et donc pour jouer le rôle de CTO bénévole pour des projets qui te tiennent à coeur.
+Tu as donc du temps pour des side projects en tout genre, et donc pour jouer le rôle de CTO bénévole pour des projets qui te tiennent à cœur.
 
 Et là, en veille sur les slacks et discord de THP, tu vois sortir un projet final de fou qui pourrait très bien changer la face du monde.
-Ni une ni deux tu te dis : "Il faut que je les aide !".
+Ni une ni deux, tu te dis : "Il faut que je les aide !".
 
 ## 2. Le Final Project de la promo précédente.
 Bien sûr, ce projet, comme beaucoup de projets d'alumnis, n'a pas de tests. On le sait, c'est pour ça que t'es là je te rappelle.
@@ -26,7 +26,7 @@ Déroulez à deux vos plus belles specs et faites un 100% de coverage sur les mo
 
 Non je ne parle pas de Promenades et Randonnées mais bien de Pull Request.
 Je te propose de faire une PR quand vous aurez fini.
-Pour la branche d'arrivée de la PR sélectionnez bien le repo initial, et non celui qui vous appartient.
+Pour la branche d'arrivée de la PR, sélectionnez bien le repo initial, et non celui qui vous appartient.
 
 Car de cette manière, un jour, le groupe d'alumni pourra décider (ou non) de merge votre travail en récompense.
 
