@@ -1,5 +1,4 @@
 # Nouvelle Startup, nouvelle vie !
-<!-- Description du projet au format texte et en 1 paragraphe max (pas plus) -->
 A ton tour de décrire QUOI tester.
 
 ## 1. Introduction
@@ -46,7 +45,7 @@ Maintenant on veut savoir CE QUI DEVRA ÊTRE TESTÉ : comment et pourquoi.
 
 Pour préparer cette réunion avec ta CTO, tu vas créer un repo contenant un simple fichier markdown avec ce format
 
-```markdown
+```md
 # Spec TicTacToe
 
 ## bidule.rb

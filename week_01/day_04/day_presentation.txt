@@ -1,2 +1,1 @@
-Vous pensiez que j'avais oublié Rails ???
-Que neni. Cette journée est dédié à RSpec pour rails... vous verrez, vous saviez déjà tout.
+Vous pensiez que j'avais oublié Rails ??? Que neni. Cette journée est dédiée à RSpec pour rails... vous verrez, vous saviez déjà tout.

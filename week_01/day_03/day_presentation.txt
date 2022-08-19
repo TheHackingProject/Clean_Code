@@ -1,2 +1,1 @@
-Aujourd'hui vous allez reprendre l'exercice d'hier avec RSpec.
-On en profitera pour aborder certaines notions plus complexe de testing.
+Aujourd'hui vous allez reprendre l'exercice d'hier avec RSpec. On en profitera pour aborder certaines notions plus complexes de testing.

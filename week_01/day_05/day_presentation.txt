@@ -1,3 +1,1 @@
-Le mockingjay d'Hunger Games ça vous rappel un truc ?
-Ben là pareil, les hardcore testers pourront affronter les mocks, double et spies avec ferveurs...
-Attention, ça se pratiquent avec coquille, plastron et anti-venin.
+Le mockingjay d'Hunger Games ça vous rappel un truc ? Ben là pareil, les hardcore testers pourront affronter les mocks, double et spies avec ferveurs... Attention, ça se pratique avec coquille, plastron et anti-venin.

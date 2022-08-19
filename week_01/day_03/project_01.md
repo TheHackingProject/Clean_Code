@@ -1,4 +1,7 @@
 # Opération Happy CTO
+Un projet trop cool sur les tests.
+
+## 1. Introduction
 Ta CTO a validé hier en réunion, séance tenante avec les stakeholders, ta vision testing sur le MVP.
 
 T'as le feu vert.
@@ -10,7 +13,6 @@ Pas de tests, pas de MAJ du MVP.
 Pas de MAJ du MVP, pas de sous des invests.
 Pas de sous : l'histoire s'arrête là. Adieu la gloire.
 
-## 1. Introduction
 Et toi : tu veux ton salaire à la fin du mois.
 Donc tu vas impressionner tout le monde et leur montrer que ce projet vaut le coup de faire pleuvoir de l'argent.
 

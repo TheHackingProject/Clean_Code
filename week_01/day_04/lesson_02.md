@@ -1,6 +1,5 @@
 # Acceptances, E2E, Integration et... metadata
-Jusqu'à présent nous nous étions concentrés sur l'utilisation d'RSpec, avec les tests unitaires comme terrain de jeux.
-Cette fois-ci, nous allons voir dans le cas d'une vraie app Rails comment les autres types de tests se construisent et comment RSpec a déjà tout prévu pour nous simplifier la vie.
+Jusqu'à présent nous nous étions concentrés sur l'utilisation d'RSpec, avec les tests unitaires comme terrain de jeux. Cette fois-ci, nous allons voir dans le cas d'une vraie app Rails comment les autres types de tests se construisent et comment RSpec a déjà tout prévu pour nous simplifier la vie.
 
 ## 1. Introduction
 Nous l'avons vu Mardi dans la ressource "Quoi tester", il existe plusieurs formes de tests. Encore une fois je ne souhaite pas rentrer dans les querelles de clocher qui font rage. Il existe beaucoup de philosophies différentes toutes correctes selon moi pour des raisons différentes, toutes plus ou moins complexes, toutes plus où moins applicables suivant le contexte, les ressources en devs, ou la dette technique.

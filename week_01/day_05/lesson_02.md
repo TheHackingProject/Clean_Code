@@ -14,7 +14,7 @@ Je te recommande de l'acheter, car les auteurs ont vraiment fait un travail rema
 De plus, ce livre prend la philo THP : chaque chapitre se termine par un exo plus ou moins badass pour s'entrainer à utiliser ce que tu viens de lire juste avant. Le faire m'a sauvé la vie.
 
 
-## 2.Qu'est-ce que tu vas y trouver ?
+## 2. Qu'est-ce que tu vas y trouver ?
 En gros tu vas y trouver en plus de tout ce qu'on a vu, les sujets que je n'ai pas abordés par choix pendant ce cursus :
 - Des manières d'installer RSpec un peu plus poussées
 - Savoir créer ses propres matchers custom.

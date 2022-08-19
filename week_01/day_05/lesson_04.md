@@ -1,9 +1,9 @@
 # Better Spec
-Pour une fois il ne s'agit pas d'un livre. Mais [BetterSpecs](https://www.betterspecs.org/) est le guide de référence de tous les dèv qui testent en RSpec.
+Pour une fois il ne s'agit pas d'un livre.
 
 
 ## 1. Pourquoi le lire ?
-Parce qu'il ne s'agit pas d'un ou d'une illuminée qui explique à tout le monde pourquoi il ou elle a raison. Non, ce sont les guidelines directement discutées par la communauté de dèv en ruby, par des dèv ruby, pour des dèv ruby.
+[BetterSpecs](https://www.betterspecs.org/) est le guide de référence de tous les dèv qui testent en RSpec. Il ne s'agit pas d'un ou d'une illuminée qui explique à tout le monde pourquoi il ou elle a raison. Non, ce sont les guidelines directement discutées par la communauté de dèv en ruby, par des dèv ruby, pour des dèv ruby.
 
 Spoiler : t'en fais partie.
 

@@ -1,5 +1,5 @@
-# Faut-il tester les gems qu'on utilise
-Forcément, la réponse c'est "ça dépend". Alors on va voir comment arbitrer sur la question dans cette ressource.
+# Faut-il tester les gems qu'on utilise ?
+Forcément, la réponse c'est "ça dépend". Sauf que ça dépend, ça dépasse. Alors on va voir comment arbitrer sur la question dans cette ressource.
 
 ## 1. Introduction
 Je t'ai parlé des tests d'intégrations. Je te les ai décrits comme étant les tests pour s'assurer que des services, API mais aussi code tierces se comportent bien de la même manière.

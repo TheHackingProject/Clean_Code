@@ -1,6 +1,5 @@
 # Doc, my old friend
-La doc d'RSpec, de l'aveu des contributeurs eux-mêmes, c'est franchement mal organisé et pas beginner friendly.
-Je t'explique comment t'y retrouver.
+La doc d'RSpec, de l'aveu des contributeurs eux-mêmes, c'est franchement mal organisé et pas beginner friendly. Je t'explique comment t'y retrouver.
 
 ## 1. Introduction
 Effectivement, la documentation d'RSpec, tout le monde le dit : c'est le foutoir, c'est pas compliqué on dirait ma piaule.

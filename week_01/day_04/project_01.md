@@ -1,7 +1,5 @@
 # Success Story 🚀️ (validant)
-Depuis l'histoire de THP, nombre de projets se sont vus devenir de véritables startups.
-
-Te voici désormais confronté à un vrai projet en prod.
+Depuis l'histoire de THP, nombre de projets se sont vus devenir de véritables startups. Nous allons donc te confronter à un vrai projet en prod.
 
 ## 1. Introduction
 Depuis que tu es devenu le sauveur des levées de fond chez TTT Corp, la boîte est devenue une licorne 🦄️ et toi, tu profites de tes BSPCE, et tu sirotes des cocktails dans ton nouveau job de Lead Testing au 3/5ème avec congés illimités.

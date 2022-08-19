@@ -1,9 +1,9 @@
 # Clean Code - Robert C. Martin
 Le livre dont est inspiré le titre de ce cursus.
-[Clean Code](https://g.co/kgs/UnPdz5)
+
 
 ## 1. Pourquoi le lire ?
-Parce que c'est LA référence pour écrire du code propre. Nous n'avons pas été tout à fait honnêtes avec toi. Faire du clean code ne se résume pas à écrire des tests. Il y a tellement de choses qui comptent.
+[Clean Code](https://g.co/kgs/UnPdz5) est LA référence pour écrire du code propre. Nous n'avons pas été tout à fait honnêtes avec toi. Faire du clean code ne se résume pas à écrire des tests. Il y a tellement de choses qui comptent.
 Robert C. Martin, alias "Uncle Bob", et réputé internationalement pour son point de vue sur "Comment écrire du code proprement". Il est le fondateur de la philo du Software Craftmanship.
 
 Son livre est illustré systématiquement d'exemple. Alors certes les exemples sont en Java. Mais crois-moi, c'est même encore mieux. Car à travers la lecture, l'auteur te fera lire du code dégueux. Puis te montrera le même code mais clean... et même écrit en Java, tu verras ce que veut réellement dire `clean`.

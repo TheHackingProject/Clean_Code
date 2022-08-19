@@ -1,3 +1,6 @@
+# Bonus
+On va te donner un projet bonus si jamais tu débordes d'appétit.
+
 ## 1. Projet Bonus
 
 Vous aurez surement remarqué, grâce à vos tests, de meilleures manières d'écrire le code déjà en place.

@@ -1,4 +1,7 @@
-# Le mot de la fin
+# Conclusion
+On commence par une conclusion.
+
+## Le mot de la fin
 
 Félicitations. Tu as fini ce cursus Clean Code avec RSpec. Ce n'était pas facile, mais ensemble on a démystifié cette chimère et aujourd'hui tu sais tester à peu près n'importe quelle app en Ruby.
 Et s'il y a certaines petites choses que tu ne sais pas encore faire, tu sais comment t'en sortir, enfin, en fouillant la doc.

@@ -115,6 +115,7 @@ rails generate scaffold Post name:string title:string content:text
 ```
 
 Maintenant regarde le contenu des fichiers :
+```shell
       invoke    rspec
       create      spec/models/post_spec.rb
       create      spec/requests/posts_spec.rb
@@ -124,6 +125,7 @@ Maintenant regarde le contenu des fichiers :
       create      spec/views/posts/show.html.erb_spec.rb
       create      spec/routing/posts_routing_spec.rb
       create      spec/helpers/posts_helper_spec.rb
+```
 
 On décortique tous ces fichiers dans la ressource qui suit.
 

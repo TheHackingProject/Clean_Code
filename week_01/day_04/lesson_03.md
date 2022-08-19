@@ -1,5 +1,5 @@
 # To be signed in... or not to be
-On va voir ici brièvement comment "simuler" le `sign_in` d'un utilisateur.
+On va voir ici brièvement comment "simuler" le "sign_in" d'un utilisateur.
 
 ## 1. Ya pas un helper ?
 Comme tu t'en doutes c'est le point faible de la gem rspec-rails. Aucun outil de sign_in par défaut n'est présent dans cette gem.
